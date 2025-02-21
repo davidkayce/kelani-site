@@ -1,0 +1,93 @@
+.markdown-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: "MuseoSans";
+}
+
+.markdown-container p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.markdown-container h1,
+.markdown-container h2,
+.markdown-container h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    font-family: "SpaceGrotesk-Medium";
+}
+
+.markdown-container h1 {
+    font-size: 2em;
+}
+
+.markdown-container h2 {
+    font-size: 1.5em;
+}
+
+.markdown-container h3 {
+    font-size: 1.2em;
+}
+
+.markdown-container ul, 
+.markdown-container ol {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 1.5em; /* Add padding to align with default list marker */
+}
+
+.markdown-container ul ul,
+.markdown-container ol ol,
+.markdown-container ul ol,
+.markdown-container ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.markdown-container li {
+    margin-bottom: 0.5em;
+}
+
+.markdown-container blockquote {
+    margin: 0;
+    padding-left: 1em;
+    border-left: 3px solid #ccc;
+}
+
+.markdown-container code {
+    font-family: Consolas, monospace;
+    font-size: 0.9em;
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+.markdown-container pre {
+    font-family: Consolas, monospace;
+    font-size: 0.9em;
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.markdown-container a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.markdown-container a:hover {
+    text-decoration: underline;
+}
+
+.markdown-container li {
+    margin-bottom: 0.5em;
+    list-style: disc; /* Use default list marker */
+}
+
+.markdown-container li > p {
+    margin: 0; /* Reset paragraph margin within list item */
+}
+
