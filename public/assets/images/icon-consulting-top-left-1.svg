@@ -1,0 +1,25 @@
+<svg width="89" height="55" viewBox="0 0 89 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame" clip-path="url(#clip0_3240_7290)">
+<g id="Clip path group">
+<mask id="mask0_3240_7290" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="-17" width="89" height="89">
+<g id="clip0_105_666">
+<path id="Vector" d="M89 -17H0V72H89V-17Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_3240_7290)">
+<g id="Group">
+<path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M44.5 -7.21C44.5 -12.6169 40.1169 -17 34.71 -17H9.79C4.38313 -17 0 -12.6169 0 -7.21V18.0301C0 23.437 4.38313 27.82 9.79 27.82H34.71C40.1169 27.82 44.5 32.2032 44.5 37.61V62.21C44.5 67.6167 48.8833 72 54.29 72H79.21C84.6167 72 89 67.6167 89 62.21V36.9696C89 31.5628 84.6167 27.1798 79.21 27.1798H54.29C48.8833 27.1798 44.5 22.7967 44.5 17.3898V-7.21Z" fill="url(#paint0_linear_3240_7290)"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_3240_7290" x1="6.23" y1="-5.43" x2="79.655" y2="62.8775" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E9B8FF"/>
+<stop offset="1" stop-color="#F9ECFF"/>
+</linearGradient>
+<clipPath id="clip0_3240_7290">
+<rect width="89" height="89" fill="white" transform="translate(0 -17)"/>
+</clipPath>
+</defs>
+</svg>
