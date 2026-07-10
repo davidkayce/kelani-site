@@ -119,11 +119,11 @@ input[type="tel"],
 
 @font-face {
   font-family: generalFont;
-  src: url('../src/fonts/tt_firs_neue/TT\ Firs\ Neue\ Trial\ medium.ttf')
+  src: url('./fonts/tt_firs_neue/TT Firs Neue Trial Medium.ttf')
 }
 
 
 @font-face {
   font-family: generalFont_mid;
-  src: url('../src/fonts/tt_firs_neue/TT\ Firs\ Neue\ Trial\ Light.ttf')
+  src: url('./fonts/tt_firs_neue/TT Firs Neue Trial Light.ttf')
 }

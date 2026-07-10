@@ -5,81 +5,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import SpotlightCard from "../components/SpotlightCard";
-import useScreenSize from "../hooks/useScreenSize";
 import useScrollPosition from "../hooks/useScrollPosition";
 import FadeUpAnimation from "../components/FadeUpAnimation";
 
-const SlidePrevButton = ({ themeColor }: { themeColor: string }) => {
-  const swiper = useSwiper();
-  return (
-    <motion.div
-      onClick={() => {
-        swiper.slidePrev();
-      }}
-      whileHover={{
-        scale: 1.1,
-        transition: { duration: 0.3 },
-      }}
-      whileTap={{ scale: 0.96 }}
-      style={{ backgroundColor: themeColor }}
-      className="bg-[#E98B49] w-[30px] h-[30px] md:w-[40px] md:h-[40px] rounded-full flex items-center justify-center cursor-pointer"
-    >
-      <svg
-        className="md:w-[24px] md:h-[20px] w-[18px] h-[14.4px] scale-50"
-        viewBox="0 0 24 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0.2925 10.7076L9.2925 19.7076C9.48014 19.8952 9.73464 20.0006 10 20.0006C10.2654 20.0006 10.5199 19.8952 10.7075 19.7076C10.8951 19.5199 11.0006 19.2654 11.0006 19.0001C11.0006 18.7347 10.8951 18.4802 10.7075 18.2926L3.41375 11.0001H23C23.2652 11.0001 23.5196 10.8947 23.7071 10.7072C23.8946 10.5196 24 10.2653 24 10.0001C24 9.73485 23.8946 9.4805 23.7071 9.29296C23.5196 9.10542 23.2652 9.00007 23 9.00007H3.41375L10.7075 1.70757C10.8951 1.51993 11.0006 1.26543 11.0006 1.00007C11.0006 0.734704 10.8951 0.480208 10.7075 0.292568C10.5199 0.104927 10.2654 -0.000488281 10 -0.000488281C9.73464 -0.000488281 9.48014 0.104927 9.2925 0.292568L0.2925 9.29257C0.199524 9.38544 0.125763 9.49573 0.0754395 9.61713C0.025116 9.73853 -0.000785828 9.86865 -0.000785828 10.0001C-0.000785828 10.1315 0.025116 10.2616 0.0754395 10.383C0.125763 10.5044 0.199524 10.6147 0.2925 10.7076Z"
-          fill="white"
-        />
-      </svg>
-    </motion.div>
-  );
-};
-const SlideNextButton = ({ themeColor }: { themeColor: string }) => {
-  const swiper = useSwiper();
-  return (
-    <motion.div
-      whileHover={{
-        scale: 1.1,
-        transition: { duration: 0.3 },
-      }}
-      onClick={() => {
-        swiper.slideNext();
-      }}
-      initial={{ rotateZ: 180 }}
-      whileTap={{ scale: 0.98 }}
-      style={{ backgroundColor: themeColor }}
-      className=" w-[30px] h-[30px] md:w-[40px] md:h-[40px] rounded-full flex items-center justify-center cursor-pointer"
-    >
-      <svg
-        className="md:w-[24px] md:h-[20px] w-[18px] h-[14.4px] scale-50"
-        viewBox="0 0 24 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0.2925 10.7076L9.2925 19.7076C9.48014 19.8952 9.73464 20.0006 10 20.0006C10.2654 20.0006 10.5199 19.8952 10.7075 19.7076C10.8951 19.5199 11.0006 19.2654 11.0006 19.0001C11.0006 18.7347 10.8951 18.4802 10.7075 18.2926L3.41375 11.0001H23C23.2652 11.0001 23.5196 10.8947 23.7071 10.7072C23.8946 10.5196 24 10.2653 24 10.0001C24 9.73485 23.8946 9.4805 23.7071 9.29296C23.5196 9.10542 23.2652 9.00007 23 9.00007H3.41375L10.7075 1.70757C10.8951 1.51993 11.0006 1.26543 11.0006 1.00007C11.0006 0.734704 10.8951 0.480208 10.7075 0.292568C10.5199 0.104927 10.2654 -0.000488281 10 -0.000488281C9.73464 -0.000488281 9.48014 0.104927 9.2925 0.292568L0.2925 9.29257C0.199524 9.38544 0.125763 9.49573 0.0754395 9.61713C0.025116 9.73853 -0.000785828 9.86865 -0.000785828 10.0001C-0.000785828 10.1315 0.025116 10.2616 0.0754395 10.383C0.125763 10.5044 0.199524 10.6147 0.2925 10.7076Z"
-          fill="white"
-        />
-      </svg>
-    </motion.div>
-  );
-};
 const SubsidiaryShowcase2 = ({
   type,
   setScrollTops,
   leftImageScale,
   title,
-  description,
   services,
   sectionImage,
-  spotlightLoading,
-  spotlightData,
 }: {
   type: string;
   setScrollTops?: Dispatch<
@@ -96,12 +31,7 @@ const SubsidiaryShowcase2 = ({
   const containerRef = useRef(null);
   const themeColor =
     type == "engineering" ? "#E36E1B" : type == "power" ? "#069E7D" : "#79188C";
-  const accentColor =
-    type == "engineering" ? "#E98B49" : type == "power" ? "#38B197" : "#9446A3";
-  const spotlightColor =
-    type == "engineering" ? "#4a2a15" : type == "power" ? "#0E3738" : "#231937";
   const { y } = useScrollPosition();
-  const [powerCtaHovered, setPowerCtaHovered] = useState(false);
 
   useEffect(() => {
     if (containerRef.current && setScrollTops) {
@@ -131,7 +61,6 @@ const SubsidiaryShowcase2 = ({
     }
   }, [containerRef.current, y]);
 
-  const { width } = useScreenSize();
   const [sectionReadMoreHovered, setSectionReadMoreHovered] = useState(false);
   return (
     <div ref={containerRef} style={{ backgroundColor: themeColor }}>
@@ -187,7 +116,10 @@ const SubsidiaryShowcase2 = ({
                 <p className="museo-sans mt-[8px] md:max-w-[85%] leading-[1.7] text-[14px] lg:text-[15px]">
                   {service?.paragraphs && service?.paragraphs[0]}
                 </p>
-                 <button className="flex py-[8px] pr-[12px]  mt-6 items-center space-x-[10px] border-white relative z-10">
+                 <button
+                      onMouseEnter={() => setSectionReadMoreHovered(true)}
+                      onMouseLeave={() => setSectionReadMoreHovered(false)}
+                      className="flex py-[8px] pr-[12px]  mt-6 items-center space-x-[10px] border-white relative z-10">
                       <motion.svg
                         animate={{
                           x: sectionReadMoreHovered ? 5 : 0,
@@ -222,120 +154,6 @@ const SubsidiaryShowcase2 = ({
           ))}
         </div>
       </div>
-      {/* {!spotlightLoading &&
-        ((spotlightData?.length as number) > 0 || type == "power") && (
-          <div
-            style={{ backgroundColor: themeColor }}
-            className="relative py-[70px]"
-          >
-            <FadeUpAnimation y={0}>
-              <Swiper
-                className="md:min-w-[25rem] lg:min-w-[35rem]  static overflow-y-visible flex flex-col-reverse px-[20px] lg:px-[48px]"
-                slidesPerView={width > 1024 ? 2.1 : 1}
-                spaceBetween={23}
-              >
-                <div className="flex mb-[20px] md:mb-[31px] pt-[12px] space-x-[12px] md:space-x-[16px] ">
-                  <div className="text-[26px] lg:text-[28px] text-white space-grotesk-medium">
-                    Spotlight
-                  </div>
-                  <div className="flex items-center space-x-[12px]">
-                    <SlidePrevButton themeColor={accentColor} />
-                    <SlideNextButton themeColor={accentColor} />
-                  </div>
-                  <div className="museo-sans font-light text-[12px] text-[#7c7c7c] space-x-[16px] md:space-x-[32px] flex items-center">
-                    <div
-                      style={{ backgroundColor: accentColor }}
-                      className="text-[12px] md:text-[14px] py-[3px] md:py-[6px] px-[10px] md:px-[20px]  font-normal rounded-[8px] leading-[0.8] md:leading-[1] flex items-center justify-center museo-sans text-white h-[80%] uppercase "
-                    >
-                      Drag
-                    </div>
-                  </div>
-                </div>
-                <div className="cursor-grabbing">
-                  {type == "power" && (
-                    <SwiperSlide>
-                      <a
-                        onMouseEnter={() => setPowerCtaHovered(true)}
-                        onMouseLeave={() => setPowerCtaHovered(false)}
-                        href={"/power?cta_form_open=true"}
-                        target="_blank"
-                        className="w-full overflow-hidden border-[#D2DADF] flex flex-col cursor-pointer relative h-[60dvh] min-h-[300px] max-h-[600px] lg:min-h-[600px]"
-                      >
-                        <img
-                          src="assets/images/power-plant.png"
-                          className="absolu top-0 right-0 left-0 bottom-0 w-full h-full object-cover"
-                        />
-                        <motion.div
-                          animate={{
-                            opacity: powerCtaHovered ? 0.8 : 1,
-                            transition: { duration: 0.4 },
-                          }}
-                          style={{
-                            backgroundColor: spotlightColor,
-                            opacity: 0.4,
-                          }}
-                          className="w-full h-full top-0 bottom-0 left-0 z-[1] absolute"
-                        ></motion.div>
-                        <motion.div
-                          animate={{
-                            opacity: powerCtaHovered ? 1 : 0,
-                            transition: {
-                              duration: powerCtaHovered ? 0.4 : 0.2,
-                            },
-                          }}
-                          className="w-full h-full inset-0 absolute flex flex-col justify-end py-[40px] md:py-[48px] px-[27px] md:px-[40px] z-10"
-                        >
-                          <p className="text-white museo-sans text-[13px] md:text-[16px] h-[95px]">
-                            Empower your Business with Kelani Power Today.
-                            Scalability, Efficiency, and Success at it's peak.
-                            Take the next step towards unlocking your full
-                            potential today.
-                          </p>
-                        </motion.div>
-                        <div className="w-full h-full absolute top-0 right-0 left-0 bottom-0 text-white bg-opacity-[0.4] py-[40px] md:py-[48px] px-[27px] md:px-[40px] flex flex-col justify-between  ">
-                          <p className="text-white text-[32px] md:text-[44px] lg:text-[54px] z-10">
-                            {"01"}
-                          </p>
-                          <motion.h4
-                            animate={{
-                              y: powerCtaHovered ? -100 : 0,
-                              transition: {
-                                duration: 0.3,
-                                ease: [0.43, 0.13, 0.23, 0.96],
-                              },
-                            }}
-                            className="!text-white space-grotesk-medium text-[26px] md:text-[28px] lg:text-[36px] z-10 leading-[1.1]"
-                          >
-                            Buy Power Now
-                          </motion.h4>
-                        </div>
-                      </a>
-                    </SwiperSlide>
-                  )}
-                  {spotlightData?.map((item: any, index: number) => (
-                    <SwiperSlide key={index}>
-                      <SpotlightCard
-                        subtext={item["Spotlight Subtext"]}
-                        index={`0${type == "power" ? index + 2 : index + 1}`}
-                        accentColor={spotlightColor}
-                        description={item["Spotlight Description"]}
-                        link={item["Spotlight Link"]}
-                        image={item["Image Url / Video Thumbnail Url"]}
-                        key={index}
-                        themeColor={themeColor}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </div>
-              </Swiper>
-            </FadeUpAnimation>
-          </div>
-        )}
-      {spotlightLoading && (
-        <div className="border-t border-[#D2DADF] h-[250px] flex items-center justify-center lg:pr-[56px]">
-          <img src="/assets/images/loader.gif" className="w-[25px]" />
-        </div>
-      )} */}
     </div>
   );
 };

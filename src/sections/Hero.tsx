@@ -8,8 +8,6 @@ import {
 import { useRef } from "react";
 import InfiniteCarousel from "../components/InfiniteCarousel";
 import NavBar from "../components/NavBar";
-// import TextAnimation from "../components/TextAnimation";
-// import useScreenSize from "../hooks/useScreenSize";
 import useNavStore from "../store/nav";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useScreenSize from "../hooks/useScreenSize";

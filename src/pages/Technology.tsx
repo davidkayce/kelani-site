@@ -1,154 +1,16 @@
 import Lenis from "@studio-freight/lenis/types";
-import axios from "axios";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import FloatingNav from "../components/FloatingNav";
-import useScreenSize from "../hooks/useScreenSize";
-import useScrollPosition from "../hooks/useScrollPosition";
-import AboutCompany from "../sections/AboutCompany";
 import Footer from "../sections/Footer";
-import Hero from "../sections/Hero";
-import SubsidiaryShowcase from "../sections/SubsidiaryShowcase";
 import { Helmet } from "react-helmet";
 import './home2.css'
 import NavBar from "../components/NavBar";
 import useNavStore from "../store/nav";
 
 const Technology = ({ lenis }: { lenis: Lenis }) => {
-  const { y: scrollY } = useScrollPosition();
-  const { height } = useScreenSize();
-  const [scrollTops, setScrollTops] = useState({
-    engineering: 0,
-    power: 0,
-    consulting: 0,
-  });
-
-  const engineeringSpotlightRef = useRef<HTMLDivElement>(null);
-  const powerSpotlightRef = useRef<HTMLDivElement>(null);
-  const consultingSpotlightRef = useRef<HTMLDivElement>(null);
-
-  const [engineeringLoading, setEngineeringLoading] = useState(false);
-  const [engineeringData, setEngineeringData] = useState([]);
-  const [powerLoading, setPowerLoading] = useState(false);
-  const [powerData, setPowerData] = useState([]);
-  const [consultingLoading, setConsultingLoading] = useState(false);
-  const [consultingData, setConsultingData] = useState([]);
-
-  const fetchEngineeringSpotlight = async () => {
-    const options = {
-      method: "GET",
-      url: "https://app.nocodb.com/api/v2/tables/m9jiu7o232gnc51/records",
-      params: { offset: "0", limit: "25", where: "" },
-      headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
-      },
-    };
-
-    try {
-      setEngineeringLoading(true);
-      const response = await axios.request(options);
-      setEngineeringData(response.data.list);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setEngineeringLoading(false);
-    }
-  };
-  const fetchPowerSpotlight = async () => {
-    const options = {
-      method: "GET",
-      url: "https://app.nocodb.com/api/v2/tables/mv9ppgghnkn9gzl/records",
-      params: { offset: "0", limit: "25", where: "" },
-      headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
-      },
-    };
-
-    try {
-      setPowerLoading(true);
-      const response = await axios.request(options);
-      setPowerData(response.data.list);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setPowerLoading(false);
-    }
-  };
-  const fetchConsultingSpotlight = async () => {
-    const options = {
-      method: "GET",
-      url: "https://app.nocodb.com/api/v2/tables/mkrhguss1gvum5r/records",
-      params: { offset: "0", limit: "25", where: "" },
-      headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
-      },
-    };
-
-    try {
-      setConsultingLoading(true);
-      const response = await axios.request(options);
-      setConsultingData(response.data.list);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setConsultingLoading(false);
-    }
-  };
-  const { scrollYProgress: engineeringScrollYProgress } = useScroll({
-    target: engineeringSpotlightRef,
-    offset: ["start end", "end start"],
-  });
-  const { scrollYProgress: powerScrollYProgress } = useScroll({
-    target: powerSpotlightRef,
-    offset: ["start end", "end start"],
-  });
-  const { scrollYProgress: consultingScrollYProgress } = useScroll({
-    target: consultingSpotlightRef,
-    offset: ["start end", "end start"],
-  });
-
-  const engineeringImageScale = useTransform(
-    engineeringScrollYProgress,
-    [0, 1],
-    [1, 1.7]
-  );
-  const aboutUsY = useTransform(
-    engineeringScrollYProgress,
-    [0, 1],
-    [1, engineeringSpotlightRef?.current?.offsetHeight ?? 0]
-  );
-
-  const engineeringY = useTransform(
-    powerScrollYProgress,
-    [0, 1],
-    [0, powerSpotlightRef?.current?.offsetHeight ?? 0]
-  );
-  const powerImageScale = useTransform(powerScrollYProgress, [0, 1], [1, 1.7]);
-  const powerY = useTransform(
-    consultingScrollYProgress,
-    [0, 1],
-    [0, consultingSpotlightRef?.current?.offsetHeight ?? 0]
-  );
-  useEffect(() => {
-    fetchEngineeringSpotlight();
-    fetchPowerSpotlight();
-    fetchConsultingSpotlight();
-  }, []);
-  const talentImageScale = useTransform(
-    consultingScrollYProgress,
-    [0, 1],
-    [1, 1.7]
-  );
-
   const { navShowing, setNavShowing } = useNavStore();
   return (
     <>
@@ -211,29 +73,6 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                   </p>
                 </div>
               </div>
-            </div>
-          </section>
-          <section className="module full-width-media">
-            <div className="pt-sm pb-xs ">
-              <video
-                autoPlay=""
-                disablepictureinpicture=""
-                loop=""
-                muted=""
-                playsInline=""
-                height={927}
-                width={1648}
-              >
-                <source
-                  src="https://servd-aether-fuel.b-cdn.net/production/assets/videos/hero/tri-reactor-rotate_2024-07-16-163950_vlzy.webm"
-                  type="video/webm"
-                />
-              </video>
-              <p className="full-width-media__caption">
-                Rendering of a section of the 100 gallon per day scale demo
-                plant under construction by Kelani and strategic partner GTI
-                Energy.
-              </p>
             </div>
           </section>
           <section className="module section-label">
@@ -380,24 +219,6 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                   <a href="#a-deeper-dive">Learn more</a>
                 </div>
               </div>
-            </div>
-          </section>
-          <section className="module full-width-media">
-            <div className="module-wrapper pt-sm pb-md bg-alt">
-              <video
-                autoPlay=""
-                disablepictureinpicture=""
-                loop=""
-                muted=""
-                playsInline=""
-                height={927}
-                width={1648}
-              >
-                <source
-                  src="https://servd-aether-fuel.b-cdn.net/production/assets/videos/hero/aurora-three-catalysts-animation.mp4"
-                  type="video/mp4"
-                />
-              </video>
             </div>
           </section>
           <section className="module section-label">
@@ -569,7 +390,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Many industrial processes produce off-gases rich in
@@ -623,7 +444,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Municipal solid waste (MSW) and agricultural and
@@ -676,7 +497,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Methane emissions from the decomposition of organic
@@ -731,7 +552,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             CO2 is present in the atmosphere and in the exhausts
@@ -805,7 +626,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Today these raw waste gas streams are cleaned to
@@ -861,7 +682,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Commercial gasifiers convert sized and dried
@@ -919,7 +740,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Commercial anerobic digesters convert organic waste
@@ -976,7 +797,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             When CO2 is captured from flue exhaust, following
@@ -1056,7 +877,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             In the syngas generation step, the gas feed into the
@@ -1118,7 +939,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             In the FT conversion step, syngas from the
@@ -1175,7 +996,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             In the upgrading step, the raw FT hydrocarbons are
@@ -1256,7 +1077,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Sustainable aviation fuel is designed for use as a
@@ -1305,7 +1126,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Sustainable diesel is designed for use as a fuel in
@@ -1354,7 +1175,7 @@ const Technology = ({ lenis }: { lenis: Lenis }) => {
                           </svg>
                         </h4>
                       </button>
-                      <div className="accordion__target" inert="">
+                      <div className="accordion__target" {...{ inert: "" }}>
                         <div>
                           <p>
                             Sustainable naphtha is designed for use as a fuel in

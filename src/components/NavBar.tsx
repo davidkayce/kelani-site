@@ -13,7 +13,6 @@ interface NavBarProps {
 const NavBar = ({ closeNav, lenis }: NavBarProps) => {
   const { width } = useScreenSize();
   const [contactHovered, setContactHovered] = useState(false);
-  const [blogHovered, setBlogHovered] = useState(false);
   const navigate = useNavigate();
   return (
     <>

@@ -46,7 +46,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
       url: "https://app.nocodb.com/api/v2/tables/m9jiu7o232gnc51/records",
       params: { offset: "0", limit: "25", where: "" },
       headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
+        "xc-token": import.meta.env.VITE_APP_NOCODB_AUTH_TOKEN,
       },
     };
 
@@ -66,7 +66,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
       url: "https://app.nocodb.com/api/v2/tables/mv9ppgghnkn9gzl/records",
       params: { offset: "0", limit: "25", where: "" },
       headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
+        "xc-token": import.meta.env.VITE_APP_NOCODB_AUTH_TOKEN,
       },
     };
 
@@ -86,7 +86,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
       url: "https://app.nocodb.com/api/v2/tables/mkrhguss1gvum5r/records",
       params: { offset: "0", limit: "25", where: "" },
       headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
+        "xc-token": import.meta.env.VITE_APP_NOCODB_AUTH_TOKEN,
       },
     };
 
