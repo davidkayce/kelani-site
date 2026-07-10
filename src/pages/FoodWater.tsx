@@ -7,29 +7,36 @@ import FadeUpAnimation from "../components/FadeUpAnimation";
 
 const FoodWater = ({ lenis }: { lenis: Lenis }) => {
   return (
-    <PageShell lenis={lenis} mainClassName="bg-kelani-teal">
+    <PageShell lenis={lenis}>
       <Helmet>
         <title>Food & Water Production — Kelani</title>
       </Helmet>
 
-      <section className="px-clamp-inline pt-[40px] pb-[56px] text-white max-w-[900px]">
+      <section className="px-clamp-inline pt-[32px] pb-[56px] grid lg:grid-cols-2 gap-[40px] items-center">
         <FadeUpAnimation delay={0.1}>
-          <a href="/industry" className="eyebrow-label text-kelani-mint">
+          <a href="/industry" className="eyebrow-label text-kelani-teal/60">
             &larr; Industry
           </a>
-          <h1 className="display-heading mt-[16px] text-white">
+          <h1 className="display-heading mt-[16px] text-kelani-teal">
             Food & Water Production
           </h1>
-          <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-white/70 mt-[24px] max-w-[640px]">
+          <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[24px] max-w-[560px]">
             We provide the machinery, expertise, and tools for setting up
             water treatment plants, food processing lines, and food
             packaging operations — sourced, installed, and supported end to
             end.
           </p>
         </FadeUpAnimation>
+        <FadeUpAnimation delay={0.25}>
+          <img
+            src="/assets/images/plastic2.jpg"
+            alt="Bottled water production"
+            className="w-full h-[320px] md:h-[420px] object-cover"
+          />
+        </FadeUpAnimation>
       </section>
 
-      <section className="bg-kelani-cream text-kelani-teal px-clamp-inline py-[64px]">
+      <section className="px-clamp-inline py-[64px] border-t border-[#e4e0d6]">
         <FadeUpAnimation delay={0.1}>
           <span className="eyebrow-label text-kelani-teal/60">
             Water treatment
@@ -66,67 +73,59 @@ const FoodWater = ({ lenis }: { lenis: Lenis }) => {
         </div>
       </section>
 
-      <section className="px-clamp-inline py-[64px] text-white">
+      <section className="px-clamp-inline py-[64px] bg-kelani-cream">
         <FadeUpAnimation delay={0.1}>
-          <span className="eyebrow-label text-kelani-mint">
+          <span className="eyebrow-label text-kelani-teal/60">
             Food processing & packaging
           </span>
-          <h2 className="space-grotesk-semibold text-[26px] md:text-[32px] mt-[12px] max-w-[560px] text-white">
+          <h2 className="space-grotesk-semibold text-[26px] md:text-[32px] mt-[12px] max-w-[560px] text-kelani-teal">
             From raw input to shelf-ready product.
           </h2>
         </FadeUpAnimation>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[16px] mt-[36px]">
           <IconFeature
-            tone="dark"
             icon="mill"
             title="Industrial Processing Lines"
             description="Processing equipment sized to your throughput, from small-batch to full industrial scale."
             delay={0.15}
           />
           <IconFeature
-            tone="dark"
             icon="mill"
             title="Grain Milling Equipment"
             description="Milling and grinding machinery for grains, cereals, and flour production."
             delay={0.2}
           />
           <IconFeature
-            tone="dark"
             icon="snowflake"
             title="Cold Storage & Refrigeration"
             description="Cold rooms and refrigeration systems to preserve product quality across the supply chain."
             delay={0.25}
           />
           <IconFeature
-            tone="dark"
             icon="flame"
             title="Pasteurization Units"
             description="Heat-treatment systems for dairy, juice, and liquid food products."
             delay={0.3}
           />
           <IconFeature
-            tone="dark"
             icon="package"
             title="Filling & Sealing Lines"
             description="Automated filling and sealing for bottles, pouches, and containers."
             delay={0.35}
           />
           <IconFeature
-            tone="dark"
             icon="clipboard"
             title="Labeling Machinery"
             description="Labeling and coding equipment for compliance-ready, retail-ready packaging."
             delay={0.4}
           />
           <IconFeature
-            tone="dark"
             icon="package"
             title="Shrink-Wrap & Blister Packaging"
             description="Secondary packaging systems for shelf presentation and transport protection."
             delay={0.45}
           />
           <IconFeature
-            tone="dark"
             icon="truck"
             title="Procurement & Logistics"
             description="Sourcing and shipping handled for you, from factory floor to your facility."
@@ -135,7 +134,7 @@ const FoodWater = ({ lenis }: { lenis: Lenis }) => {
         </div>
       </section>
 
-      <section className="bg-kelani-cream text-kelani-teal px-clamp-inline py-[56px]">
+      <section className="px-clamp-inline py-[56px] border-t border-[#e4e0d6]">
         <FadeUpAnimation delay={0.1}>
           <h2 className="space-grotesk-semibold text-[22px] md:text-[26px] max-w-[560px] text-kelani-teal">
             What we offer, beyond the machinery

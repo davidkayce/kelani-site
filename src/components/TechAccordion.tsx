@@ -41,25 +41,25 @@ const TechAccordion = ({ items }: { items: AccordionItem[] }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <ul className="accordion text-white">
+    <ul className="accordion">
       {items.map((item, i) => {
         const expanded = openIndex === i;
         return (
-          <li key={item.title} className="border-b border-white/10">
+          <li key={item.title} className="border-b border-kelani-teal/15">
             <button
               type="button"
               className="accordion__trigger w-full text-left py-[20px] flex items-center justify-between gap-[16px]"
               aria-expanded={expanded}
               onClick={() => setOpenIndex(expanded ? null : i)}
             >
-              <h4 className="space-grotesk-semibold text-[17px] md:text-[19px] flex items-center justify-between w-full gap-[16px] text-white">
+              <h4 className="space-grotesk-semibold text-[17px] md:text-[19px] flex items-center justify-between w-full gap-[16px] text-kelani-teal">
                 {item.title}
                 <ToggleIcon expanded={expanded} />
               </h4>
             </button>
             <div className="accordion__target" {...(expanded ? {} : { inert: "" })}>
               <div>
-                <p className="museo-sans text-white/70 text-[15px] leading-[1.7] pb-[20px] max-w-[560px]">
+                <p className="museo-sans text-kelani-teal/70 text-[15px] leading-[1.7] pb-[20px] max-w-[560px]">
                   {item.body}
                 </p>
               </div>

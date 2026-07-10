@@ -45,12 +45,15 @@ const PageShell = ({
               onClick={() => setNavShowing(true)}
               whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
               whileTap={{ scale: 0.95, transition: { duration: 0.3 } }}
-              className="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] bg-transparent rounded-full flex justify-center items-center cursor-pointer bg-white"
+              className="cursor-pointer flex items-center justify-center w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-full bg-white md:w-auto md:h-auto md:rounded-none md:bg-transparent md:px-0"
             >
               <img
-                className="scale-90 sm:scale-100"
+                className="scale-90 sm:scale-100 md:hidden"
                 src="/assets/images/icon-nav.svg"
               />
+              <span className="hidden md:inline museo-sans text-[15px] font-semibold uppercase tracking-wider text-[#0f1930]">
+                Menu
+              </span>
             </motion.div>
           </div>
         </nav>

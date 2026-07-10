@@ -43,7 +43,7 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
   };
 
   return (
-    <section id="finance" className="grid md:grid-cols-2 scroll-mt-[100px]">
+    <section id="finance" className="grid md:grid-cols-2 border-t border-[#e4e0d6] scroll-mt-[100px]">
       <FadeUpAnimation delay={0.1}>
         <div className="bg-kelani-cream text-kelani-teal h-full p-[32px] md:p-[56px] flex flex-col justify-center">
           <span className="eyebrow-label text-kelani-teal/60">
@@ -63,15 +63,15 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
         </div>
       </FadeUpAnimation>
       <FadeUpAnimation delay={0.25}>
-        <div className="bg-kelani-teal text-white h-full p-[32px] md:p-[56px]">
+        <div className="bg-white text-kelani-teal h-full p-[32px] md:p-[56px] border-l border-[#e4e0d6]">
           {sent ? (
             <div className="h-full flex flex-col justify-center">
               <p className="space-grotesk-semibold text-[22px]">
                 Thanks &mdash; your email app should be open.
               </p>
-              <p className="museo-sans text-white/70 mt-[12px] text-[14px]">
+              <p className="museo-sans text-kelani-teal/70 mt-[12px] text-[14px]">
                 If it didn't open, email us directly at{" "}
-                <a className="text-kelani-mint underline" href={`mailto:${SUPPORT_EMAIL}`}>
+                <a className="underline" href={`mailto:${SUPPORT_EMAIL}`}>
                   {SUPPORT_EMAIL}
                 </a>
                 .
@@ -83,10 +83,10 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
                 <input
                   {...register("name")}
                   placeholder="Your name"
-                  className="bg-transparent border border-white/25 focus:border-kelani-mint outline-none rounded-[8px] p-[12px] museo-sans text-[14px] placeholder:text-white/40"
+                  className="bg-transparent border border-[#d8d4c8] focus:border-kelani-teal outline-none rounded-[2px] p-[12px] museo-sans text-[14px] placeholder:text-kelani-teal/40"
                 />
                 {errors.name && (
-                  <span className="text-[12px] text-[#ff8a7a] museo-sans">
+                  <span className="text-[12px] text-[#c0392b] museo-sans">
                     {errors.name.message}
                   </span>
                 )}
@@ -95,10 +95,10 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
                 <input
                   {...register("company")}
                   placeholder="Company name"
-                  className="bg-transparent border border-white/25 focus:border-kelani-mint outline-none rounded-[8px] p-[12px] museo-sans text-[14px] placeholder:text-white/40"
+                  className="bg-transparent border border-[#d8d4c8] focus:border-kelani-teal outline-none rounded-[2px] p-[12px] museo-sans text-[14px] placeholder:text-kelani-teal/40"
                 />
                 {errors.company && (
-                  <span className="text-[12px] text-[#ff8a7a] museo-sans">
+                  <span className="text-[12px] text-[#c0392b] museo-sans">
                     {errors.company.message}
                   </span>
                 )}
@@ -107,10 +107,10 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
                 <input
                   {...register("email")}
                   placeholder="Email address"
-                  className="bg-transparent border border-white/25 focus:border-kelani-mint outline-none rounded-[8px] p-[12px] museo-sans text-[14px] placeholder:text-white/40"
+                  className="bg-transparent border border-[#d8d4c8] focus:border-kelani-teal outline-none rounded-[2px] p-[12px] museo-sans text-[14px] placeholder:text-kelani-teal/40"
                 />
                 {errors.email && (
-                  <span className="text-[12px] text-[#ff8a7a] museo-sans">
+                  <span className="text-[12px] text-[#c0392b] museo-sans">
                     {errors.email.message}
                   </span>
                 )}
@@ -119,17 +119,17 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
                 {...register("message")}
                 placeholder="Tell us a bit about the fees you're looking to recover (optional)"
                 rows={3}
-                className="bg-transparent border border-white/25 focus:border-kelani-mint outline-none rounded-[8px] p-[12px] museo-sans text-[14px] placeholder:text-white/40 resize-none"
+                className="bg-transparent border border-[#d8d4c8] focus:border-kelani-teal outline-none rounded-[2px] p-[12px] museo-sans text-[14px] placeholder:text-kelani-teal/40 resize-none"
               />
               <button
                 type="submit"
-                className="bg-kelani-mint text-kelani-teal rounded-full py-[12px] px-[28px] w-fit museo-sans font-semibold text-[14px] mt-[4px] hover:opacity-90 transition-opacity"
+                className="bg-kelani-teal text-white rounded-[2px] py-[12px] px-[28px] w-fit museo-sans font-semibold text-[14px] mt-[4px] hover:opacity-90 transition-opacity"
               >
                 Send
               </button>
-              <p className="museo-sans text-[13px] text-white/50 mt-[4px]">
+              <p className="museo-sans text-[13px] text-kelani-teal/50 mt-[4px]">
                 Prefer email? Write to{" "}
-                <a className="text-kelani-mint underline" href={`mailto:${SUPPORT_EMAIL}`}>
+                <a className="underline" href={`mailto:${SUPPORT_EMAIL}`}>
                   {SUPPORT_EMAIL}
                 </a>{" "}
                 directly.

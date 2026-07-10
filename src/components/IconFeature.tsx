@@ -20,15 +20,15 @@ const IconFeature = ({
   return (
     <FadeUpAnimation delay={delay} y={30}>
       <div
-        className={`flex flex-col gap-[16px] p-[24px] rounded-[14px] border h-full ${
+        className={`flex flex-col gap-[14px] p-[20px] border-t-2 h-full ${
           isDark
-            ? "border-white/15 text-white"
-            : "border-kelani-teal/10 text-kelani-teal"
+            ? "border-kelani-mint text-white"
+            : "border-kelani-teal text-kelani-teal"
         }`}
       >
         <LineIcon
           name={icon}
-          className={`w-9 h-9 ${isDark ? "text-kelani-mint" : "text-kelani-teal"}`}
+          className={`w-12 h-12 ${isDark ? "text-kelani-mint" : "text-kelani-teal"}`}
         />
         <h4
           className={`space-grotesk-semibold text-[17px] leading-[1.3] ${

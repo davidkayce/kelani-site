@@ -1,31 +1,37 @@
 import { motion } from "framer-motion";
 
-export type PillarTone = "teal" | "mint" | "cream" | "dark";
+export type PillarTone = "teal" | "mint" | "cream" | "dark" | "white";
 
 const toneStyles: Record<PillarTone, { bg: string; text: string; sub: string; border: string }> = {
   teal: {
     bg: "bg-kelani-teal",
     text: "text-white",
     sub: "text-white/70",
-    border: "border-white/15",
+    border: "border-kelani-teal",
   },
   mint: {
     bg: "bg-kelani-mint",
     text: "text-kelani-teal",
     sub: "text-kelani-teal/70",
-    border: "border-kelani-teal/15",
+    border: "border-kelani-mint",
   },
   cream: {
     bg: "bg-kelani-cream",
     text: "text-kelani-teal",
     sub: "text-kelani-teal/70",
-    border: "border-kelani-teal/10",
+    border: "border-kelani-cream",
   },
   dark: {
     bg: "bg-[#0f1930]",
     text: "text-white",
     sub: "text-white/70",
-    border: "border-white/15",
+    border: "border-[#0f1930]",
+  },
+  white: {
+    bg: "bg-white",
+    text: "text-kelani-teal",
+    sub: "text-kelani-teal/60",
+    border: "border-[#e4e0d6]",
   },
 };
 
@@ -43,7 +49,7 @@ const PillarBlock = ({
   title,
   description,
   href,
-  tone = "teal",
+  tone = "white",
   cta = "Explore",
 }: PillarBlockProps) => {
   const styles = toneStyles[tone];
@@ -54,7 +60,7 @@ const PillarBlock = ({
       {...(href ? { href } : {})}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
-      className={`flex flex-col justify-between h-full min-h-[280px] p-[28px] md:p-[36px] rounded-[16px] border ${styles.bg} ${styles.border} ${
+      className={`flex flex-col justify-between h-full min-h-[280px] p-[28px] md:p-[36px] rounded-[2px] border ${styles.bg} ${styles.border} ${
         href ? "cursor-pointer" : ""
       }`}
     >

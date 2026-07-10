@@ -39,7 +39,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
           <FadeUpAnimation delay={0.15}>
             <PillarBlock
               index={1}
-              tone="teal"
+              tone="white"
               title="Food & Water"
               description="Machinery and expertise for water treatment, food processing, and packaging."
               href="/industry/food-water"
@@ -57,7 +57,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
           <FadeUpAnimation delay={0.29}>
             <PillarBlock
               index={3}
-              tone="dark"
+              tone="white"
               title="Energy"
               description="Integrated design, production, and installation of biochar, bioethanol, biodiesel, and biogas systems."
               href="/energy"
