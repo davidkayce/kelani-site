@@ -2,9 +2,57 @@
 @import url("./fonts/css/museo-sans.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+:root {
+  --kelani-teal: #132420;
+  --kelani-teal-light: #1c332d;
+  --kelani-cream: #f4f1ea;
+  --kelani-mint: #4fbe96;
+}
+
 body {
   background-color: #fefefe;
   font-family: generalFont;
+}
+
+.bg-kelani-teal {
+  background-color: var(--kelani-teal);
+}
+.bg-kelani-teal-light {
+  background-color: var(--kelani-teal-light);
+}
+.bg-kelani-cream {
+  background-color: var(--kelani-cream);
+}
+.text-kelani-mint {
+  color: var(--kelani-mint);
+}
+.bg-kelani-mint {
+  background-color: var(--kelani-mint);
+}
+.border-kelani-mint {
+  border-color: var(--kelani-mint);
+}
+.text-kelani-teal {
+  color: var(--kelani-teal);
+}
+.border-kelani-teal {
+  border-color: var(--kelani-teal);
+}
+
+.display-heading {
+  font-family: "SpaceGrotesk-Medium";
+  font-weight: 600;
+  font-size: clamp(2.5rem, 1.6rem + 3.5vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow-label {
+  font-family: "MuseoSans";
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 h1, h2, h3, h4, h5 {

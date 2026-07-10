@@ -6,16 +6,10 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import About from "./pages/About2";
 import Blog from "./pages/Blog";
 import BlogItem from "./pages/BlogItem";
-import Home from "./pages/Home";
 import Home2 from "./pages/Home2";
-import ProductPage from "./sections/subsidiaryPages/ProductPage";
-import SubsidiaryPageOne from "./sections/subsidiaryPages/SubsidiaryPageOne";
-import {
-  sub_one,
-  sub_three,
-} from "./sections/subsidiaryPages/subConstants";
-import Technology from "./pages/Technology";
-import Approach from "./pages/Approach";
+import Industry from "./pages/Industry";
+import FoodWater from "./pages/FoodWater";
+import Plastics from "./pages/Plastics";
 import Energy from "./pages/Energy";
 
 function App() {
@@ -34,11 +28,7 @@ function App() {
   const location = useLocation();
 
   useLayoutEffect(() => {
-    // setTimeout(() => window.scrollTo(0, 0), 300);
     window.scrollTo(0, 0);
-    // lenis.scrollTo("#top", {
-    //   duration: 0
-    // })
   }, [location.pathname]);
 
   return (
@@ -46,61 +36,19 @@ function App() {
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home2 lenis={lenis} />} />
+          <Route path="/about" element={<About lenis={lenis} />} />
+          <Route path="/industry" element={<Industry lenis={lenis} />} />
           <Route
-            path="/consulting"
-            element={
-              <SubsidiaryPageOne
-                cta_form="consulting"
-                title="Kelani Talent"
-                lenis={lenis}
-                sub={sub_one}
-              />
-            }
+            path="/industry/food-water"
+            element={<FoodWater lenis={lenis} />}
           />
           <Route
-            path="/about"
-            element={<About lenis={lenis} />}
+            path="/industry/plastics"
+            element={<Plastics lenis={lenis} />}
           />
-          <Route
-            path="/home1"
-            element={<Home lenis={lenis} />}
-          />
-          <Route
-            path="/engineering"
-            element={<Technology lenis={lenis} />}
-          />
-          <Route
-            path="/energy"
-            element={<Energy lenis={lenis} />}
-          />
-          <Route
-            path="/approach"
-            element={<Approach lenis={lenis} />}
-          />
-          <Route path="/engineering/products"
-            element={
-              <ProductPage
-                cta_form="engineering"
-                title="Kelani Talent"
-                lenis={lenis}
-                sub={sub_three}
-              />
-            }
-          />
-          <Route path="/blog"
-            element={
-              <Blog
-                lenis={lenis}
-              />
-            }
-          />
-          <Route path="/blog/:id"
-            element={
-              <BlogItem
-                lenis={lenis}
-              />
-            }
-          />
+          <Route path="/energy" element={<Energy lenis={lenis} />} />
+          <Route path="/blog" element={<Blog lenis={lenis} />} />
+          <Route path="/blog/:id" element={<BlogItem lenis={lenis} />} />
         </Routes>
       </AnimatePresence>
     </div>
