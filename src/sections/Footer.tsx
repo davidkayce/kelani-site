@@ -74,7 +74,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
     const requestData = {
       Name: data.name,
       Email: data.email,
-      Subject: "Website contact",
+      // Subject: data.subject,
       Message: data.message,
     };
     try {
@@ -127,22 +127,16 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
                   className="h-[60px]"
                 />
               </div>
-              <div className="p-[24px] w-full rounded-[8px] text-left text-[16.12px]  text-[#fff] leading-[1.5]">
-                <p className="font-bold">Head Office</p>
+              <div className="p-[24px] w-full rounded-[8px] text-left text-[18.12px]  text-[#fff] leading-[1.5]">
                 <p>Block 6, Plot 1, Asaba Industrial Estate,</p>
                 <p>Asaba-Ibusa Expressway,</p>
                 <p>Asaba, Delta State</p>
               </div>
-              <div className="p-[24px] w-full rounded-[8px] text-left text-[16.12px]  text-[#fff] leading-[1.5]">
-                <p>Suite A8, 9 Sarah's Place,</p>
+              <div className="p-[24px] w-full rounded-[8px] text-left text-[18.12px]  text-[#fff] leading-[1.5]">
+                <p>Suite A8, 9 Sarah’s Place,</p>
                 <p> Channels TV Avenue, Opic Isheri,</p>
                 <p>Lagos-Ibadan Expressway,</p>
                 <p>Lagos State.</p>
-              </div>
-              <div className="p-[24px] w-full rounded-[8px] text-left text-[16.12px]  text-[#fff] leading-[1.5]">
-                <p>Email us at <a href="mailto:support@kelani.ng" className="font-bold">support@kelani.ng</a></p>
-                <p>For projects reach us at <a href="mailto:projects@kelani.ng" className="font-bold">projects@kelani.ng</a></p>
-                <p className="mt-[10px]">Phone: +234 810 064 6261</p>
               </div>
               <div className="p-[24px] w-full rounded-[8px] text-left text-[18.12px]  text-[#fff] leading-[1.5] flex space-x-[23px] justify-start -ml-[26px]">
                 <FooterIcon
@@ -163,7 +157,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
                 />
               </div>
               <div className="p-[24px] w-full rounded-[8px] text-left text-[15.28px]  text-[#fff] leading-[1.5] justify-between flex">
-                <p className="lg:mr-[100px] text-[#fff] ">© {new Date().getFullYear()} Kelani Technologies Limited</p>
+                <p className="lg:mr-[100px] text-[#fff] ">© 2024 Kelani</p>
               </div>
             </div>
             <AnimatePresence>
@@ -287,7 +281,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
               )}
             </AnimatePresence>
             <div className="flex flex-col lg:flex-row text-center  lg:hidden px-[24px] pb-[20px]">
-              <p className="lg:mr-[100px] text-[#fff]">© {new Date().getFullYear()} Kelani Technologies Limited</p>
+              <p className="lg:mr-[100px] text-[#fff]">© 2024 Kelani</p>
             </div>
           </motion.div>
         </div>

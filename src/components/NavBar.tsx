@@ -73,18 +73,18 @@ const NavBar = ({ closeNav, lenis }: NavBarProps) => {
               index={1}
             />
             <NavSubsidiarySection
-              icon="/assets/images/icon-consulting.svg"
-              hasRightBorder
-              text="Engineering"
-              link="/engineering"
-              index={3}
-            />
-            <NavSubsidiarySection
               icon="/assets/images/icon-industrials.svg"
               hasRightBorder
               text="Energy"
               link="/energy"
               index={2}
+            />
+            <NavSubsidiarySection
+              icon="/assets/images/icon-consulting.svg"
+              hasRightBorder
+              text="Engineering"
+              link="/approach"
+              index={3}
             />
             <NavSubsidiarySection
               icon="/assets/images/icon-power-and-energy.svg"

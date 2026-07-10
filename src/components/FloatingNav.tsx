@@ -8,7 +8,7 @@ const FloatingNavItem = ({
   active,
   setActiveNav,
 }: {
-  text: "Company" | "Energy" | "Engineering";
+  text: "Consulting" | "Engineering" | "Power";
   active?: boolean;
   setActiveNav: () => void;
 }) => {
