@@ -1,6 +1,5 @@
 import Lenis from "@studio-freight/lenis/types";
-import { AnimatePresence, motion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import useNavStore from "../store/nav";
 import NavBar from "../components/NavBar";
 import "./home2.css";
@@ -11,11 +10,6 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({ lenis }) => {
-  const imageRef = useRef(null);
-  const { scrollYProgress: imageScrollYProgress } = useScroll({
-    target: imageRef,
-    offset: ["0.3 end", "end end"],
-  });
   const { navShowing, setNavShowing } = useNavStore();
 
   return (

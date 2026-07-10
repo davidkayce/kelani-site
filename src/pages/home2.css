@@ -44,40 +44,6 @@ button,input,select,textarea {
     }
 }
 
-@font-face {
-    font-family: Roobert Light;
-    src: url(/assets/fonts/roobert-light.woff2) format("woff2");
-    font-display: swap;
-    font-weight: 300
-}
-
-@font-face {
-    font-family: Roobert Regular;
-    src: url(/assets/fonts/roobert-regular.woff2) format("woff2");
-    font-display: swap;
-    font-weight: 400
-}
-
-@font-face {
-    font-family: Roobert Medium;
-    src: url(/assets/fonts/roobert-medium.woff2) format("woff2");
-    font-display: swap;
-    font-weight: 500
-}
-
-@font-face {
-    font-family: TT Firs Neue Normal;
-    src: url(/assets/fonts/tt-firs-neue-normal.woff2) format("woff2");
-    font-display: swap;
-    font-weight: 450
-}
-
-@font-face {
-    font-family: TT Firs Neue Medium;
-    src: url(/assets/fonts/tt-firs-neue-medium.woff2) format("woff2");
-    font-display: swap;
-    font-weight: 500
-}
 
 @view-transition {
     navigation: auto

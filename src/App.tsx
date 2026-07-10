@@ -1,9 +1,6 @@
 import Lenis from "@studio-freight/lenis";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-// import AboutCompany from './sections/AboutCompany'
-// import Footer from './sections/Footer'
-// import SubsidiaryShowcase from './sections/SubsidiaryShowcase'
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useLayoutEffect, useState } from "react";
 import About from "./pages/About2";
@@ -16,11 +13,9 @@ import SubsidiaryPageOne from "./sections/subsidiaryPages/SubsidiaryPageOne";
 import {
   sub_one,
   sub_three,
-  sub_two,
 } from "./sections/subsidiaryPages/subConstants";
 import Technology from "./pages/Technology";
 import Approach from "./pages/Approach";
-import Home3 from "./pages/Home3";
 import Energy from "./pages/Energy";
 
 function App() {
@@ -62,28 +57,6 @@ function App() {
               />
             }
           />
-          {/* <Route
-            path="/engineering"
-            element={
-              <SubsidiaryPageOne
-                cta_form="engineering"
-                title="Kelani Engineering"
-                lenis={lenis}
-                sub={sub_two}
-              />
-            }
-          /> */}
-          {/* <Route
-            path="/power"
-            element={
-              <SubsidiaryPageOne
-                cta_form="power"
-                title="Kelani Power"
-                lenis={lenis}
-                sub={sub_three}
-              />
-            }
-          /> */}
           <Route
             path="/about"
             element={<About lenis={lenis} />}
@@ -92,10 +65,6 @@ function App() {
             path="/home1"
             element={<Home lenis={lenis} />}
           />
-          {/* <Route
-            path="/hh"
-            element={<Home3 lenis={lenis} />}
-          /> */}
           <Route
             path="/engineering"
             element={<Technology lenis={lenis} />}
@@ -132,7 +101,6 @@ function App() {
               />
             }
           />
-          {/* <Route path="/parallax" element={<ParallaxCards />} /> */}
         </Routes>
       </AnimatePresence>
     </div>

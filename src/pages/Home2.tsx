@@ -11,14 +11,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import FloatingNav from "../components/FloatingNav";
 import useScreenSize from "../hooks/useScreenSize";
-import useScrollPosition from "../hooks/useScrollPosition";
-import AboutCompany from "../sections/AboutCompany";
 import Footer from "../sections/Footer";
-import Hero from "../sections/Hero";
-import SubsidiaryShowcase from "../sections/SubsidiaryShowcase";
-import { Helmet } from "react-helmet";
 import "./home2.css";
 import NavBar from "../components/NavBar";
 import useNavStore from "../store/nav";
@@ -32,9 +26,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import SpotlightCard from "../components/SpotlightCard";
 
 const Home = ({ lenis }: { lenis: Lenis }) => {
-  const { y: scrollY } = useScrollPosition();
-  const { height } = useScreenSize();
-  const [scrollTops, setScrollTops] = useState({
+  const [, setScrollTops] = useState({
     engineering: 0,
     power: 0,
     consulting: 0,
@@ -48,8 +40,6 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
   const [engineeringData, setEngineeringData] = useState([]);
   const [powerLoading, setPowerLoading] = useState(false);
   const [powerData, setPowerData] = useState([]);
-  const [consultingLoading, setConsultingLoading] = useState(false);
-  const [consultingData, setConsultingData] = useState([]);
 
   const fetchEngineeringSpotlight = async () => {
     const options = {
@@ -57,7 +47,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
       url: "https://app.nocodb.com/api/v2/tables/m9jiu7o232gnc51/records",
       params: { offset: "0", limit: "25", where: "" },
       headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
+        "xc-token": import.meta.env.VITE_APP_NOCODB_AUTH_TOKEN,
       },
     };
 
@@ -77,7 +67,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
       url: "https://app.nocodb.com/api/v2/tables/mv9ppgghnkn9gzl/records",
       params: { offset: "0", limit: "25", where: "" },
       headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
+        "xc-token": import.meta.env.VITE_APP_NOCODB_AUTH_TOKEN,
       },
     };
 
@@ -89,26 +79,6 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
       console.log(err);
     } finally {
       setPowerLoading(false);
-    }
-  };
-  const fetchConsultingSpotlight = async () => {
-    const options = {
-      method: "GET",
-      url: "https://app.nocodb.com/api/v2/tables/mkrhguss1gvum5r/records",
-      params: { offset: "0", limit: "25", where: "" },
-      headers: {
-        "xc-token": "gbtt4j9PadEtKXdYLUJrtc1vvdJz7LptQqOE1z9T",
-      },
-    };
-
-    try {
-      setConsultingLoading(true);
-      const response = await axios.request(options);
-      setConsultingData(response.data.list);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setConsultingLoading(false);
     }
   };
   const { scrollYProgress: engineeringScrollYProgress } = useScroll({
@@ -129,11 +99,6 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
     [0, 1],
     [1, 1.7]
   );
-  const aboutUsY = useTransform(
-    engineeringScrollYProgress,
-    [0, 1],
-    [1, engineeringSpotlightRef?.current?.offsetHeight ?? 0]
-  );
 
   const engineeringY = useTransform(
     powerScrollYProgress,
@@ -149,15 +114,8 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
   useEffect(() => {
     fetchEngineeringSpotlight();
     fetchPowerSpotlight();
-    fetchConsultingSpotlight();
   }, []);
-  const talentImageScale = useTransform(
-    consultingScrollYProgress,
-    [0, 1],
-    [1, 1.7]
-  );
   const { navShowing, setNavShowing } = useNavStore();
-  const [powerCtaHovered, setPowerCtaHovered] = useState(false);
   const SlidePrevButton = ({ themeColor }: { themeColor: string }) => {
     const swiper = useSwiper();
     return (
@@ -189,7 +147,6 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
   };
 
   const { width } = useScreenSize();
-  const themeColor = "#E36E1B";
   const SlideNextButton = ({ themeColor }: { themeColor: string }) => {
     const swiper = useSwiper();
     return (
