@@ -44,7 +44,7 @@
     "react-scrollbars-custom": "^4.1.1",
     "reading-time-estimator": "^1.10.0",
     "scrollmagic": "^2.0.8",
-    "swiper": "^11.1.14",
+    "swiper": "^11.0.5",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4",

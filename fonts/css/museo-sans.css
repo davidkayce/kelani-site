@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "MuseoSans";
+  src: url("../museo-sans/MuseoSans-100.otf") format("opentype"),
+    url("../museo-sans/MuseoSans-300.otf") format("opentype"),
+    url("../museo-sans/MuseoSans_500.otf") format("opentype"),
+    url("../museo-sans/MuseoSans_700.otf") format("opentype"),
+    url("../museo-sans/MuseoSans_900.otf") format("opentype");
+  font-weight: 100 300 500 700 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuseoSans";
+  src: url("../museo-sans/MuseoSans-100.otf") format("opentype");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuseoSans";
+  src: url("../museo-sans/MuseoSans-300.otf") format("opentype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuseoSans";
+  src: url("../museo-sans/MuseoSans_500.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuseoSans";
+  src: url("../museo-sans/MuseoSans_700.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuseoSans";
+  src: url("../museo-sans/MuseoSans_900.otf") format("opentype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
