@@ -54,35 +54,47 @@ const PillarBlock = ({
 }: PillarBlockProps) => {
   const styles = toneStyles[tone];
   const Wrapper = href ? motion.a : motion.div;
+  const hover = href
+    ? "group hover:bg-kelani-teal hover:border-kelani-teal transition-colors duration-300"
+    : "";
+  const hoverText = href ? "group-hover:text-white transition-colors duration-300" : "";
+  const hoverSub = href ? "group-hover:text-white/70 transition-colors duration-300" : "";
 
   return (
     <Wrapper
       {...(href ? { href } : {})}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
-      className={`flex flex-col justify-between h-full min-h-[280px] p-[28px] md:p-[36px] rounded-[2px] border ${styles.bg} ${styles.border} ${
+      className={`flex flex-col justify-between h-full min-h-[300px] p-[28px] md:p-[36px] rounded-[2px] border ${styles.bg} ${styles.border} ${hover} ${
         href ? "cursor-pointer" : ""
       }`}
     >
-      <span className={`eyebrow-label opacity-60 ${styles.text}`}>
+      <span className={`eyebrow-label opacity-60 ${styles.text} ${hoverText}`}>
         {String(index).padStart(2, "0")}
       </span>
-      <div className="mt-[40px]">
+      <div className="mt-[48px]">
         <h3
-          className={`space-grotesk-semibold text-[24px] md:text-[28px] leading-[1.15] ${styles.text}`}
+          className={`space-grotesk-semibold text-[24px] md:text-[27px] leading-[1.12] tracking-[-0.01em] ${styles.text} ${hoverText}`}
         >
           {title}
         </h3>
-        <p className={`museo-sans text-[14px] md:text-[15px] mt-[12px] leading-[1.6] ${styles.sub}`}>
+        <p
+          className={`museo-sans text-[14px] md:text-[15px] mt-[14px] leading-[1.65] ${styles.sub} ${hoverSub}`}
+        >
           {description}
         </p>
       </div>
       {href && (
         <span
-          className={`museo-sans text-[13px] font-semibold uppercase tracking-wider mt-[24px] inline-flex items-center gap-[8px] ${styles.text}`}
+          className={`museo-sans text-[13px] font-semibold uppercase tracking-wider mt-[28px] inline-flex items-center gap-[8px] ${styles.text} ${hoverText}`}
         >
           {cta}
-          <span aria-hidden="true">&rarr;</span>
+          <span
+            aria-hidden="true"
+            className="inline-block transition-transform duration-300 group-hover:translate-x-[5px]"
+          >
+            &rarr;
+          </span>
         </span>
       )}
     </Wrapper>

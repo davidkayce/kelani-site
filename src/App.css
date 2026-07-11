@@ -47,6 +47,10 @@ body {
   letter-spacing: -0.02em;
 }
 
+.img-editorial {
+  filter: grayscale(18%) saturate(0.92) contrast(1.03);
+}
+
 .eyebrow-label {
   font-family: "MuseoSans";
   font-size: 0.75rem;

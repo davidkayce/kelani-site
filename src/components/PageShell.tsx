@@ -31,8 +31,8 @@ const PageShell = ({
             <NavBar lenis={lenis} closeNav={() => setNavShowing(false)} />
           )}
         </AnimatePresence>
-        <nav>
-          <div className="w-full p-[20px] md:p-[30px] md:px-[48px] flex justify-between z-20 max-w-[1660px] mx-auto">
+        <nav className="border-b border-black/[0.06]">
+          <div className="w-full p-[20px] md:p-[30px] md:px-[48px] flex justify-between items-center z-20 max-w-[1660px] mx-auto">
             <div className="lg:px-[20px] h-[35px] rounded-full flex items-center justify-center">
               <a href="/" className="my-auto">
                 <img
@@ -51,7 +51,7 @@ const PageShell = ({
                 className="scale-90 sm:scale-100 md:hidden"
                 src="/assets/images/icon-nav.svg"
               />
-              <span className="hidden md:inline museo-sans text-[15px] font-semibold uppercase tracking-wider text-[#0f1930]">
+              <span className="hidden md:inline museo-sans text-[14px] font-semibold uppercase tracking-[0.14em] text-[#0f1930] hover:opacity-60 transition-opacity">
                 Menu
               </span>
             </motion.div>

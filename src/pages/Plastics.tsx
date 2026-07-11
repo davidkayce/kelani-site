@@ -4,6 +4,8 @@ import PageShell from "../components/PageShell";
 import IconFeature from "../components/IconFeature";
 import FinanceCallout from "../components/FinanceCallout";
 import FadeUpAnimation from "../components/FadeUpAnimation";
+import SectionHeader from "../components/SectionHeader";
+import Eyebrow from "../components/Eyebrow";
 
 const Plastics = ({ lenis }: { lenis: Lenis }) => {
   return (
@@ -12,35 +14,41 @@ const Plastics = ({ lenis }: { lenis: Lenis }) => {
         <title>Plastics — Kelani</title>
       </Helmet>
 
-      <section className="px-clamp-inline pt-[32px] pb-[56px] grid lg:grid-cols-2 gap-[40px] items-center">
+      <section className="px-clamp-inline pt-[48px] pb-[72px] md:pt-[64px] md:pb-[96px] grid lg:grid-cols-2 gap-[48px] items-center">
         <FadeUpAnimation delay={0.1}>
-          <a href="/industry" className="eyebrow-label text-kelani-teal/60">
+          <a
+            href="/industry"
+            className="eyebrow-label text-kelani-teal/60 hover:text-kelani-teal transition-colors"
+          >
             &larr; Industry
           </a>
-          <h1 className="display-heading mt-[16px] text-kelani-teal">Plastics</h1>
-          <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[24px] max-w-[560px]">
+          <h1 className="display-heading mt-[18px] text-kelani-teal">Plastics</h1>
+          <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[26px] max-w-[540px]">
             We're involved in the full plastics value chain — from sourcing
             pellets, to the machinery that shapes them, to turnkey recycling
             projects and the advisory that ties it all together.
           </p>
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.25}>
-          <img
-            src="/assets/images/energy1.jpg"
-            alt="Plastic recycling and sorting machinery"
-            className="w-full h-[320px] md:h-[420px] object-cover"
-          />
+          <figure>
+            <img
+              src="/assets/images/energy1.jpg"
+              alt="Plastic recycling and sorting machinery"
+              className="w-full h-[320px] md:h-[440px] object-cover img-editorial"
+            />
+            <figcaption className="museo-sans text-[12px] text-kelani-teal/50 mt-[10px]">
+              Plastics recovery line with inline metal detection.
+            </figcaption>
+          </figure>
         </FadeUpAnimation>
       </section>
 
-      <section className="px-clamp-inline py-[64px] border-t border-[#e4e0d6]">
-        <FadeUpAnimation delay={0.1}>
-          <span className="eyebrow-label text-kelani-teal/60">Sourcing</span>
-          <h2 className="space-grotesk-semibold text-[26px] md:text-[32px] mt-[12px] max-w-[560px] text-kelani-teal">
-            Virgin and recycled pellets, sourced reliably.
-          </h2>
-        </FadeUpAnimation>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[16px] mt-[36px]">
+      <section className="px-clamp-inline py-[72px] md:py-[96px] border-t border-[#e4e0d6]">
+        <SectionHeader
+          eyebrow="Sourcing"
+          title="Virgin and recycled pellets, sourced reliably."
+        />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-[28px] gap-y-[24px] mt-[44px]">
           <IconFeature
             icon="pellet"
             title="PET"
@@ -68,14 +76,12 @@ const Plastics = ({ lenis }: { lenis: Lenis }) => {
         </div>
       </section>
 
-      <section className="px-clamp-inline py-[64px] bg-kelani-cream">
-        <FadeUpAnimation delay={0.1}>
-          <span className="eyebrow-label text-kelani-teal/60">Machinery</span>
-          <h2 className="space-grotesk-semibold text-[26px] md:text-[32px] mt-[12px] max-w-[560px] text-kelani-teal">
-            From pellet to finished part.
-          </h2>
-        </FadeUpAnimation>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[16px] mt-[36px]">
+      <section className="px-clamp-inline py-[72px] md:py-[96px] bg-kelani-cream">
+        <SectionHeader
+          eyebrow="Machinery"
+          title="From pellet to finished part."
+        />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-[28px] gap-y-[24px] mt-[44px]">
           <IconFeature
             icon="extrude"
             title="Extrusion Lines"
@@ -97,41 +103,46 @@ const Plastics = ({ lenis }: { lenis: Lenis }) => {
         </div>
       </section>
 
-      <section className="px-clamp-inline py-[64px] border-t border-[#e4e0d6] grid md:grid-cols-2 gap-[32px] items-center">
+      <section className="px-clamp-inline py-[72px] md:py-[96px] border-t border-[#e4e0d6] grid md:grid-cols-2 gap-[48px] items-center">
         <FadeUpAnimation delay={0.1}>
-          <span className="eyebrow-label text-kelani-teal/60">Recycling</span>
-          <h2 className="space-grotesk-semibold text-[26px] md:text-[32px] mt-[12px] text-kelani-teal">
+          <Eyebrow>Recycling</Eyebrow>
+          <h2 className="space-grotesk-semibold text-[28px] md:text-[38px] leading-[1.08] tracking-[-0.01em] mt-[14px] text-kelani-teal">
             Turnkey plastic recycling plants.
           </h2>
-          <p className="museo-sans text-[15px] leading-[1.7] mt-[16px] text-kelani-teal/70 max-w-[440px]">
+          <p className="museo-sans text-[15px] leading-[1.7] mt-[18px] text-kelani-teal/70 max-w-[440px]">
             We design, source, and install complete recycling lines — from
             sorting and washing to shredding, pelletizing, and baling —
             turning plastic waste back into usable material.
           </p>
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.25}>
-          <img
-            src="/assets/images/balebreaker-PET-recycling.jpg"
-            alt="PET plastic recycling baling machinery"
-            className="w-full h-[320px] object-cover"
-          />
+          <figure>
+            <img
+              src="/assets/images/balebreaker-PET-recycling.jpg"
+              alt="PET plastic recycling baling machinery"
+              className="w-full h-[340px] object-cover img-editorial"
+            />
+            <figcaption className="museo-sans text-[12px] text-kelani-teal/50 mt-[10px]">
+              Bale breaker feeding a PET recycling line.
+            </figcaption>
+          </figure>
         </FadeUpAnimation>
       </section>
 
-      <section className="px-clamp-inline py-[64px] bg-kelani-cream grid md:grid-cols-2 gap-[32px] items-center">
-        <FadeUpAnimation delay={0.25} y={30}>
+      <section className="px-clamp-inline py-[72px] md:py-[96px] bg-kelani-cream grid md:grid-cols-2 gap-[48px] items-center">
+        <FadeUpAnimation delay={0.2} y={30}>
           <img
             src="/assets/images/research-image.png"
             alt="Engineer assessing plastics equipment"
-            className="w-full h-[300px] object-cover order-2 md:order-1"
+            className="w-full h-[340px] object-cover img-editorial"
           />
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.1}>
-          <span className="eyebrow-label text-kelani-teal/60">Advisory</span>
-          <h2 className="space-grotesk-semibold text-[26px] md:text-[32px] mt-[12px] max-w-[480px] text-kelani-teal">
+          <Eyebrow>Advisory</Eyebrow>
+          <h2 className="space-grotesk-semibold text-[28px] md:text-[38px] leading-[1.08] tracking-[-0.01em] mt-[14px] max-w-[480px] text-kelani-teal">
             Guidance across the whole project.
           </h2>
-          <div className="grid gap-[20px] mt-[24px]">
+          <div className="grid gap-[24px] mt-[28px]">
             <IconFeature
               icon="clipboard"
               title="Feasibility Studies"

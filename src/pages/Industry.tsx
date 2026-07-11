@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 import PageShell from "../components/PageShell";
 import PillarBlock from "../components/PillarBlock";
 import FadeUpAnimation from "../components/FadeUpAnimation";
+import Eyebrow from "../components/Eyebrow";
+import StatBand from "../components/StatBand";
 
 const Industry = ({ lenis }: { lenis: Lenis }) => {
   return (
@@ -11,13 +13,13 @@ const Industry = ({ lenis }: { lenis: Lenis }) => {
         <title>Industry — Kelani</title>
       </Helmet>
 
-      <section className="px-clamp-inline pt-[32px] pb-[64px] grid lg:grid-cols-2 gap-[40px] items-center">
+      <section className="px-clamp-inline pt-[48px] pb-[72px] md:pt-[64px] md:pb-[96px] grid lg:grid-cols-2 gap-[48px] items-center">
         <FadeUpAnimation delay={0.1}>
-          <span className="eyebrow-label text-kelani-teal/60">Industry</span>
-          <h1 className="display-heading mt-[16px] text-kelani-teal">
+          <Eyebrow>Industry</Eyebrow>
+          <h1 className="display-heading mt-[18px] text-kelani-teal">
             Where Kelani builds, sources, and installs.
           </h1>
-          <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[24px] max-w-[560px]">
+          <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[26px] max-w-[540px]">
             Kelani's industrial arm covers two hands-on lines of business:
             equipping food and water production, and working the full plastics
             value chain — from pellet sourcing to turnkey recycling plants.
@@ -26,15 +28,20 @@ const Industry = ({ lenis }: { lenis: Lenis }) => {
           </p>
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.25}>
-          <img
-            src="/assets/images/engineering-section-image.png"
-            alt="Industrial machinery on a production line"
-            className="w-full h-[320px] md:h-[420px] object-cover"
-          />
+          <figure>
+            <img
+              src="/assets/images/engineering-section-image.png"
+              alt="Robotic arms on an automated production line"
+              className="w-full h-[320px] md:h-[440px] object-cover img-editorial"
+            />
+            <figcaption className="museo-sans text-[12px] text-kelani-teal/50 mt-[10px]">
+              Automated production line — sourced, installed, and commissioned by Kelani.
+            </figcaption>
+          </figure>
         </FadeUpAnimation>
       </section>
 
-      <section className="px-clamp-inline pb-[100px] grid md:grid-cols-2 gap-[24px]">
+      <section className="px-clamp-inline pb-[96px] md:pb-[120px] grid md:grid-cols-2 gap-[24px]">
         <FadeUpAnimation delay={0.15}>
           <PillarBlock
             index={1}
@@ -57,27 +64,14 @@ const Industry = ({ lenis }: { lenis: Lenis }) => {
         </FadeUpAnimation>
       </section>
 
-      <section className="border-t border-[#e4e0d6] px-clamp-inline py-[56px]">
-        <div className="grid sm:grid-cols-3 gap-[32px] max-w-[900px]">
-          <div>
-            <p className="space-grotesk-semibold text-[40px] text-kelani-teal">20+</p>
-            <p className="museo-sans text-[14px] text-kelani-teal/60">
-              Years of flawless delivery
-            </p>
-          </div>
-          <div>
-            <p className="space-grotesk-semibold text-[40px] text-kelani-teal">$500M+</p>
-            <p className="museo-sans text-[14px] text-kelani-teal/60">
-              In machinery sourced and installed
-            </p>
-          </div>
-          <div>
-            <p className="space-grotesk-semibold text-[40px] text-kelani-teal">250+</p>
-            <p className="museo-sans text-[14px] text-kelani-teal/60">
-              Client businesses served
-            </p>
-          </div>
-        </div>
+      <section className="px-clamp-inline py-[72px] md:py-[96px] border-t border-[#e4e0d6]">
+        <StatBand
+          stats={[
+            { value: "20+", label: "Years of flawless delivery" },
+            { value: "$500M+", label: "In machinery sourced and installed" },
+            { value: "250+", label: "Client businesses served" },
+          ]}
+        />
       </section>
     </PageShell>
   );

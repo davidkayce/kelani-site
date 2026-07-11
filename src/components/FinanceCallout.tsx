@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import FadeUpAnimation from "./FadeUpAnimation";
+import Eyebrow from "./Eyebrow";
 
 const schema = z.object({
   name: z.string().nonempty({ message: "Name is required" }),
@@ -46,9 +47,7 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
     <section id="finance" className="grid md:grid-cols-2 border-t border-[#e4e0d6] scroll-mt-[100px]">
       <FadeUpAnimation delay={0.1}>
         <div className="bg-kelani-cream text-kelani-teal h-full p-[32px] md:p-[56px] flex flex-col justify-center">
-          <span className="eyebrow-label text-kelani-teal/60">
-            Finance &mdash; coming soon
-          </span>
+          <Eyebrow>Finance &mdash; coming soon</Eyebrow>
           <h3 className="display-heading mt-[16px] text-kelani-teal" style={{ fontSize: "clamp(1.75rem, 1.4rem + 1.4vw, 2.75rem)" }}>
             Recovering fees you're already owed
           </h3>
