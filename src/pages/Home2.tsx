@@ -2,6 +2,8 @@ import Lenis from "@studio-freight/lenis/types";
 import PageShell from "../components/PageShell";
 import PillarBlock from "../components/PillarBlock";
 import FadeUpAnimation from "../components/FadeUpAnimation";
+import Eyebrow from "../components/Eyebrow";
+import StatBand from "../components/StatBand";
 import "./home2.css";
 
 const Home = ({ lenis }: { lenis: Lenis }) => {
@@ -28,14 +30,14 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
         </div>
       </section>
 
-      <section className="px-clamp-inline pb-[100px]">
+      <section className="px-clamp-inline pb-[96px] md:pb-[120px]">
         <FadeUpAnimation delay={0.1}>
-          <span className="eyebrow-label text-[#0f1930]/50">What we do</span>
-          <h2 className="space-grotesk-semibold text-[28px] md:text-[36px] mt-[12px] max-w-[600px] text-[#0f1930]">
+          <Eyebrow className="text-[#0f1930]/50">What we do</Eyebrow>
+          <h2 className="space-grotesk-semibold text-[28px] md:text-[38px] leading-[1.08] tracking-[-0.01em] mt-[14px] max-w-[640px] text-[#0f1930]">
             Four lines of business, one commitment to Africa's industry.
           </h2>
         </FadeUpAnimation>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[16px] mt-[36px]">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-[44px]">
           <FadeUpAnimation delay={0.15}>
             <PillarBlock
               index={1}
@@ -76,7 +78,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
         </div>
       </section>
 
-      <section className="module large-text-full pt-[1.6rem] pb-[13rem]">
+      <section className="module large-text-full pt-[1.6rem]">
         <div className="module-wrapper pt-xl">
           <div className="grid-row">
             <div className="grid-col-width-9 column-border-lg">
@@ -95,35 +97,16 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
             </div>
           </div>
         </div>
-        <div className="px-clamp-inline flex flex-col space-y-[20px] md:space-y-0 md:flex-row justify-between mt-[26px] md:mt-[36px] w-full text-black">
-          <div className="px-20 md:px-[3rem] md:w-[90%] flex flex-col md:flex-row justify-between w-full space-y-[20px] md:space-y-0 mt-16">
-            <div>
-              <p className="text-[#0f1930] font-semibold text-[3.5rem]">
-                20+
-              </p>
-              <p className="text-[1rem] leading-[1.1] text-[#00000060]">
-                Years of flawless <br className="hidden lg:block" /> delivery
-              </p>
-            </div>
-            <div>
-              <p className="text-[#0f1930] font-semibold text-[3.5rem]">
-                $500+
-              </p>
-              <p className="text-[1rem] leading-[1.1] text-[#00000060]">
-                Million dollars in <br className="hidden lg:block" />{" "}
-                machinery
-              </p>
-            </div>
-            <div>
-              <p className="text-[#0f1930] font-semibold text-[3.5rem]">
-                250+
-              </p>
-              <p className="text-[1rem] leading-[1.1] text-[#00000060]">
-                Thrilled client <br className="hidden lg:block" /> businesses
-              </p>
-            </div>
-          </div>
-        </div>
+      </section>
+
+      <section className="px-clamp-inline pt-[64px] md:pt-[88px] pb-[96px] md:pb-[128px]">
+        <StatBand
+          stats={[
+            { value: "20+", label: "Years of flawless delivery" },
+            { value: "$500M+", label: "In machinery sourced and installed" },
+            { value: "250+", label: "Thrilled client businesses" },
+          ]}
+        />
       </section>
 
       <section className="h-screen full-width-media">

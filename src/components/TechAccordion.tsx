@@ -48,18 +48,23 @@ const TechAccordion = ({ items }: { items: AccordionItem[] }) => {
           <li key={item.title} className="border-b border-kelani-teal/15">
             <button
               type="button"
-              className="accordion__trigger w-full text-left py-[20px] flex items-center justify-between gap-[16px]"
+              className="accordion__trigger w-full text-left py-[22px] flex items-center justify-between gap-[16px]"
               aria-expanded={expanded}
               onClick={() => setOpenIndex(expanded ? null : i)}
             >
-              <h4 className="space-grotesk-semibold text-[17px] md:text-[19px] flex items-center justify-between w-full gap-[16px] text-kelani-teal">
-                {item.title}
+              <h4 className="space-grotesk-semibold text-[17px] md:text-[20px] flex items-center justify-between w-full gap-[16px] text-kelani-teal">
+                <span className="flex items-baseline gap-[18px]">
+                  <span className="eyebrow-label text-kelani-teal/40 w-[26px]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {item.title}
+                </span>
                 <ToggleIcon expanded={expanded} />
               </h4>
             </button>
             <div className="accordion__target" {...(expanded ? {} : { inert: "" })}>
               <div>
-                <p className="museo-sans text-kelani-teal/70 text-[15px] leading-[1.7] pb-[20px] max-w-[560px]">
+                <p className="museo-sans text-kelani-teal/70 text-[15px] leading-[1.7] pb-[24px] pl-[44px] max-w-[560px]">
                   {item.body}
                 </p>
               </div>
