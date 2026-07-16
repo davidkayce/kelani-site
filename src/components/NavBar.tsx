@@ -37,7 +37,7 @@ const NavBar = ({ closeNav, lenis }: NavBarProps) => {
         <motion.div
           initial={{ height: 0 }}
           animate={{
-            height: width >= 1024 ? 360 : 240,
+            height: width >= 1024 ? 360 : 340,
             transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
           }}
           exit={{
@@ -48,7 +48,7 @@ const NavBar = ({ closeNav, lenis }: NavBarProps) => {
           }}
           className="overflow-hidden"
         >
-          <motion.div className="w-full h-[240px] lg:h-[360px] bg-[linear-gradient(135deg,rgba(0,0,0,.9),rgba(0,0,0.2,0.8))] flex flex-col lg:flex-row overflow-hidden">
+          <motion.div className="w-full h-[340px] lg:h-[360px] bg-[linear-gradient(135deg,rgba(0,0,0,.9),rgba(0,0,0.2,0.8))] flex flex-col lg:flex-row overflow-hidden">
             <div
               className={`h-full lg:hidden border-[#FEFEFE] lg:border-t-0 flex-grow flex items-center justify-center relative`}
             >
@@ -72,24 +72,38 @@ const NavBar = ({ closeNav, lenis }: NavBarProps) => {
               index={1}
             />
             <NavSubsidiarySection
+              icon="/assets/images/icon-machinery.svg"
+              hasRightBorder
+              text="Machinery"
+              link="/machinery"
+              index={2}
+            />
+            <NavSubsidiarySection
               icon="/assets/images/icon-industrials.svg"
               hasRightBorder
               text="Industry"
               link="/industry"
-              index={2}
+              index={3}
             />
             <NavSubsidiarySection
               icon="/assets/images/icon-power-and-energy.svg"
               hasRightBorder
               text="Energy"
               link="/energy"
-              index={3}
+              index={4}
+            />
+            <NavSubsidiarySection
+              icon="/assets/images/icon-model.svg"
+              hasRightBorder
+              text="The Model"
+              link="/model"
+              index={5}
             />
             <NavSubsidiarySection
               icon="/assets/images/icon-consulting.svg"
               text="Our Blog"
               link="/blog"
-              index={4}
+              index={6}
             />
           </motion.div>
         </motion.div>

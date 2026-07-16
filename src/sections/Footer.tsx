@@ -104,7 +104,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
               transition: { duration: 0.5 },
             }}
             style={{ scale, y }}
-            className="absolute bottom-[15px] md:bottom-[24px] lg:bottom-[32px] h-[40px] bg-gradient-to-r from-[#440572e6] to-[#ff9a53] z-10 left-[16px] md:left-[24px] lg:left-[32px] right-[16px] md:right-[24px] lg:right-[32px] lg:hidden"
+            className="absolute bottom-[15px] md:bottom-[24px] lg:bottom-[32px] h-[40px] bg-kelani-teal z-10 left-[16px] md:left-[24px] lg:left-[32px] right-[16px] md:right-[24px] lg:right-[32px] lg:hidden"
           ></motion.div>
 
           <motion.img
@@ -117,7 +117,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
           />
           <motion.div
             style={{ scale, y }}
-            className="bg-gradient-to-r from-[#440572e6] to-[#ff9a53] shadow-[0_0px_10px_2px_rgba(0,0,0,0.1)] w-full h-full flex flex-col lg:grid grid-cols-2 lg:gap-[24px] lg:p-0 relative z-[2]"
+            className="bg-kelani-teal shadow-[0_0px_10px_2px_rgba(0,0,0,0.1)] w-full h-full flex flex-col lg:grid grid-cols-2 lg:gap-[24px] lg:p-0 relative z-[2]"
           >
             <div className="h-full p-[24px]  lg:px-[40px] lg:py-[33px] flex flex-col justify-center items-center lg:relative space-y-[4px] max-h-full">
               <div className="p-[24px] w-full rounded-[8px] flex justify-start items-center">
@@ -156,7 +156,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
                 />
               </div>
               <div className="p-[24px] w-full rounded-[8px] text-left text-[15.28px]  text-[#fff] leading-[1.5] justify-between flex">
-                <p className="lg:mr-[100px] text-[#fff] ">© 2024 Kelani</p>
+                <p className="lg:mr-[100px] text-[#fff] ">© 2026 Kelani</p>
               </div>
             </div>
             <AnimatePresence>
@@ -269,7 +269,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
                     transition: { duration: 0.4 },
                   }}
                   onAnimationComplete={() => setTimeout(() => close(), 2000)}
-                  className="w-full h-full min-h-[500px] flex items-center justify-center  flex-col max-w-[60%] text-left mx-auto"
+                  className="w-full h-full min-h-[500px] flex items-center justify-center  flex-col max-w-[60%] text-left mx-auto text-white"
                 >
                   <p className="text-[26px] font-medium">Thank You!</p>
                   <p className="text-[20px]">
@@ -280,7 +280,7 @@ const Footer = ({ contactUsUrl }: { contactUsUrl: string }) => {
               )}
             </AnimatePresence>
             <div className="flex flex-col lg:flex-row text-center  lg:hidden px-[24px] pb-[20px]">
-              <p className="lg:mr-[100px] text-[#fff]">© 2024 Kelani</p>
+              <p className="lg:mr-[100px] text-[#fff]">© 2026 Kelani</p>
             </div>
           </motion.div>
         </div>

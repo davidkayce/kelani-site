@@ -2,7 +2,7 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     font-size: 16px;
-    font-family: "MuseoSans";
+    font-family: "Inter", system-ui, sans-serif;
 }
 
 .markdown-container p {

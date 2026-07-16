@@ -18,7 +18,12 @@ export type LineIconName =
   | "truck"
   | "shield"
   | "spark"
-  | "chart";
+  | "chart"
+  | "layers"
+  | "factory"
+  | "handshake"
+  | "coin"
+  | "loop";
 
 const strokeProps = {
   fill: "none",
@@ -160,6 +165,39 @@ const paths: Record<LineIconName, JSX.Element> = {
       <path d="M8 32V8" {...strokeProps} />
       <path d="M8 32h24" {...strokeProps} />
       <path d="M13 27v-6M20 27V15M27 27v-10" {...strokeProps} />
+    </>
+  ),
+  layers: (
+    <>
+      <path d="M20 6 34 13 20 20 6 13 20 6Z" {...strokeProps} />
+      <path d="M6 20l14 7 14-7" {...strokeProps} />
+      <path d="M6 27l14 7 14-7" {...strokeProps} />
+    </>
+  ),
+  factory: (
+    <>
+      <path d="M6 33V17l9 5v-5l9 5v-5l10 5v11H6Z" {...strokeProps} />
+      <path d="M10 17V8h5v9" {...strokeProps} />
+      <path d="M12 27h3M20 27h3M28 27h3" {...strokeProps} />
+    </>
+  ),
+  handshake: (
+    <>
+      <path d="M4 14h6l6 12 4 2 4-2 6-12h6" {...strokeProps} />
+      <path d="M20 12l-6 6 3 3 3-3 3 3 3-3-6-6Z" {...strokeProps} />
+    </>
+  ),
+  coin: (
+    <>
+      <circle cx="20" cy="20" r="12" {...strokeProps} />
+      <path d="M20 13v14M24.5 16.5c-1-1.5-2.7-2-4.5-2-2.2 0-4 1.1-4 3s2 2.6 4 3 4 1 4 3-1.8 3-4 3c-1.8 0-3.5-.5-4.5-2" {...strokeProps} />
+    </>
+  ),
+  loop: (
+    <>
+      <path d="M10 24a10 10 0 0 1 18.5-6" {...strokeProps} />
+      <path d="M30 16a10 10 0 0 1-18.5 6" {...strokeProps} />
+      <path d="M28 9v7h-7M12 31v-7h7" {...strokeProps} />
     </>
   ),
 };

@@ -122,7 +122,7 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
               />
               <button
                 type="submit"
-                className="bg-kelani-teal text-white rounded-[2px] py-[12px] px-[28px] w-fit museo-sans font-semibold text-[14px] mt-[4px] hover:opacity-90 transition-opacity"
+                className="btn-brand rounded-[2px] py-[12px] px-[28px] w-fit museo-sans font-semibold text-[14px] mt-[4px]"
               >
                 Send
               </button>

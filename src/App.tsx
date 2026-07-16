@@ -7,6 +7,8 @@ import About from "./pages/About2";
 import Blog from "./pages/Blog";
 import BlogItem from "./pages/BlogItem";
 import Home2 from "./pages/Home2";
+import Model from "./pages/Model";
+import Machinery from "./pages/Machinery";
 import Industry from "./pages/Industry";
 import FoodWater from "./pages/FoodWater";
 import Plastics from "./pages/Plastics";
@@ -37,6 +39,8 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home2 lenis={lenis} />} />
           <Route path="/about" element={<About lenis={lenis} />} />
+          <Route path="/model" element={<Model lenis={lenis} />} />
+          <Route path="/machinery" element={<Machinery lenis={lenis} />} />
           <Route path="/industry" element={<Industry lenis={lenis} />} />
           <Route
             path="/industry/food-water"

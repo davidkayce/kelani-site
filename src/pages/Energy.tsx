@@ -10,20 +10,20 @@ import StatBand from "../components/StatBand";
 
 const systems = [
   {
-    title: "Biochar",
-    body: "Biomass and agricultural waste are pyrolyzed at high temperature in a low-oxygen environment, producing a stable, carbon-rich char used for soil enrichment, carbon sequestration, and industrial filtration — while the process byproducts feed back in as energy.",
+    title: "Biochar carbonisation",
+    body: "Biomass and agricultural residues are pyrolyzed in a low-oxygen environment, producing a stable, carbon-rich char for soil enrichment, carbon removal, and industrial filtration — while syngas byproducts feed back in as energy. This is the archetype behind our first BOOT plant.",
   },
   {
-    title: "Bioethanol",
-    body: "Fermentation of sugar and starch feedstocks (cassava, sugarcane, corn) followed by distillation produces bioethanol for fuel blending and industrial solvent use — a scalable path to cleaner liquid fuel from local agricultural inputs.",
+    title: "Anaerobic digestion",
+    body: "Organic waste — agricultural residue, food waste, animal manure — is broken down anaerobically into biomethane for power generation or direct use, with digestate recovered as organic fertiliser.",
   },
   {
-    title: "Biodiesel",
-    body: "Vegetable oils and waste cooking oil are converted through transesterification into biodiesel suitable for blending with conventional diesel, cutting emissions without requiring new engine infrastructure.",
+    title: "Biofuels",
+    body: "Fermentation and distillation of local feedstocks produces bioethanol, while vegetable and waste cooking oils convert to biodiesel — cleaner liquid fuels that blend into existing engines and supply chains.",
   },
   {
-    title: "Biogas",
-    body: "Organic waste — agricultural residue, food waste, animal manure — is broken down anaerobically to produce biogas for power generation or direct use, with digestate recovered as fertilizer.",
+    title: "Waste-to-energy",
+    body: "Sorted municipal waste is processed into refuse-derived fuel and gasified into power and heat — industrial energy at cluster scale, from a waste stream someone else pays to remove.",
   },
 ];
 
@@ -59,10 +59,14 @@ const Energy = ({ lenis }: { lenis: Lenis }) => {
             Biomass into power, fuel, and fertility.
           </h1>
           <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[26px] max-w-[540px]">
-            Kelani designs, produces, and installs integrated systems across
-            biochar, bioethanol, biodiesel, and biogas — turning
-            agricultural and organic waste into usable energy and materials.
-            It's also a line we intend to build in ourselves, not just supply.
+            Kelani designs, builds, and operates integrated systems across
+            biochar, biogas, biofuels, and waste-to-energy — turning
+            agricultural, organic, and municipal waste into usable energy and
+            materials. These are the plant archetypes at the heart of our{" "}
+            <a href="/model" className="underline underline-offset-[4px] hover:opacity-70">
+              Build-Own-Operate-Transfer model
+            </a>
+            .
           </p>
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.25}>
@@ -144,15 +148,21 @@ const Energy = ({ lenis }: { lenis: Lenis }) => {
         <FadeUpAnimation delay={0.1}>
           <Eyebrow>Building the future</Eyebrow>
           <h2 className="space-grotesk-semibold text-[28px] md:text-[38px] leading-[1.08] tracking-[-0.01em] mt-[14px] max-w-[500px] text-kelani-teal">
-            We're not just equipping this industry — we intend to build in it.
+            We don't just equip this industry — we build, own, and operate in it.
           </h2>
           <p className="museo-sans text-[15px] leading-[1.7] mt-[18px] max-w-[480px] text-kelani-teal/70">
-            Beyond sourcing and installing systems for clients, Kelani is
-            working toward operating our own biochar and bioenergy production
-            — putting the same integrated design-production-installation
-            model to work on our own site. It's early, but it's where we're
-            headed.
+            Our first Build-Own-Operate-Transfer plant — a biomass
+            carbonisation facility in an Eastern Nigeria feedstock cluster —
+            anchors a growing network of owned and managed plants. Every one
+            follows the same five-step lifecycle and the same operating
+            playbook.
           </p>
+          <a
+            href="/model"
+            className="inline-block mt-[24px] museo-sans font-semibold text-[13px] uppercase tracking-wider text-kelani-teal underline underline-offset-[6px] hover:opacity-60 transition-opacity"
+          >
+            Explore the BOOT engine &rarr;
+          </a>
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.25}>
           <figure>

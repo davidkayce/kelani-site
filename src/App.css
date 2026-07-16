@@ -1,17 +1,18 @@
 @import url("./fonts/css/space-grotesk.css");
-@import url("./fonts/css/museo-sans.css");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("./fonts/css/inter.css");
 
 :root {
   --kelani-teal: #132420;
   --kelani-teal-light: #1c332d;
   --kelani-cream: #f4f1ea;
   --kelani-mint: #4fbe96;
+  --brand-gradient: linear-gradient(90deg, #440572e6, #ff9a53);
 }
 
 body {
   background-color: #fefefe;
-  font-family: generalFont;
+  font-family: "Inter", system-ui, sans-serif;
+  font-feature-settings: "cv11", "ss01";
 }
 
 .bg-kelani-teal {
@@ -52,7 +53,7 @@ body {
 }
 
 .eyebrow-label {
-  font-family: "MuseoSans";
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -60,11 +61,32 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: generalFont;
+  font-family: "SpaceGrotesk-Medium", "Inter", sans-serif;
 }
 
 p, a {
-  font-family: "MuseoSans";
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.bg-brand-gradient {
+  background-image: var(--brand-gradient);
+}
+
+.text-brand-gradient {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  width: fit-content;
+}
+
+.btn-brand {
+  background-image: var(--brand-gradient);
+  color: #fff;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.btn-brand:hover {
+  opacity: 0.92;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -86,7 +108,7 @@ body {
 
 .font-general {
   font-weight: 500;
-  font-family: generalFont;
+  font-family: "SpaceGrotesk-Medium", "Inter", sans-serif;
 }
 
 .space-grotesk-medium {
@@ -98,8 +120,9 @@ body {
   font-family: "SpaceGrotesk-Medium";
 }
 
+/* Legacy alias — MuseoSans was replaced by Inter site-wide */
 .museo-sans {
-  font-family: "MuseoSans";
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 .inter {
@@ -166,16 +189,4 @@ input[type="tel"],
   height: 100%;
   object-fit: cover;
   border-radius: 28px;
-}
-
-
-@font-face {
-  font-family: generalFont;
-  src: url('./fonts/tt_firs_neue/TT Firs Neue Trial Medium.ttf')
-}
-
-
-@font-face {
-  font-family: generalFont_mid;
-  src: url('./fonts/tt_firs_neue/TT Firs Neue Trial Light.ttf')
 }
