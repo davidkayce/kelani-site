@@ -23,8 +23,12 @@ const Industry = ({ lenis }: { lenis: Lenis }) => {
             Kelani's industrial arm covers two hands-on lines of business:
             equipping food and water production, and working the full plastics
             value chain — from pellet sourcing to turnkey recycling plants.
-            Both are built on the same foundation: real machinery, real
-            installation, and advisory that doesn't stop at the sale.
+            This is the trade and engineering foundation of our{" "}
+            <a href="/model" className="underline underline-offset-[4px] hover:opacity-70">
+              platform model
+            </a>{" "}
+            — the machinery, relationships, and site intelligence that feed
+            everything we build.
           </p>
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.25}>
