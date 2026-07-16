@@ -30,6 +30,12 @@ const Industry = ({ lenis }: { lenis: Lenis }) => {
             — the machinery, relationships, and site intelligence that feed
             everything we build.
           </p>
+          <a
+            href="/machinery"
+            className="btn-brand inline-block rounded-[2px] py-[14px] px-[28px] museo-sans font-semibold text-[13px] uppercase tracking-wider mt-[28px]"
+          >
+            Browse machinery in stock
+          </a>
         </FadeUpAnimation>
         <FadeUpAnimation delay={0.25}>
           <figure>

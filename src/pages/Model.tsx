@@ -64,16 +64,19 @@ const Model = ({ lenis }: { lenis: Lenis }) => {
 
       <section className="px-clamp-inline pt-[48px] pb-[72px] md:pt-[64px] md:pb-[96px]">
         <FadeUpAnimation delay={0.1}>
-          <Eyebrow>The Model</Eyebrow>
+          <Eyebrow>The Model &mdash; where Kelani is headed</Eyebrow>
           <h1 className="display-heading mt-[18px] text-kelani-teal max-w-[900px]">
-            Build. Own. Operate. Transfer.
+            Build. Own. Operate.{" "}
+            <span className="text-brand-gradient">Transfer.</span>
           </h1>
           <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[26px] max-w-[640px]">
-            Kelani is an industrial circular-economy platform. We import and
-            engineer the technology, build the plants, and then own, operate
-            and manage the industrial companies that run them — converting
-            waste streams into clean energy, recovered materials, biochar and
-            recovered chemicals, plant after plant.
+            Today Kelani sells machinery, designs energy systems, and helps
+            people build production businesses. The BOOT platform is where
+            those capabilities converge — alongside energy ownership and
+            industrial finance, it's one of three engines of Kelani's future:
+            importing and engineering the technology, building the plants,
+            then owning, operating and managing the industrial companies
+            that run them.
           </p>
         </FadeUpAnimation>
         <div className="grid sm:grid-cols-3 gap-[28px] max-w-[760px] mt-[56px]">
@@ -304,7 +307,7 @@ const Model = ({ lenis }: { lenis: Lenis }) => {
           <FadeUpAnimation delay={0.25}>
             <a
               href="mailto:support@kelani.ng?subject=Partnership%20—%20Kelani%20platform"
-              className="inline-block bg-kelani-mint text-kelani-teal rounded-[2px] py-[16px] px-[36px] museo-sans font-semibold text-[14px] uppercase tracking-wider hover:opacity-90 transition-opacity"
+              className="btn-brand inline-block rounded-[2px] py-[16px] px-[36px] museo-sans font-semibold text-[14px] uppercase tracking-wider"
             >
               Start a conversation
             </a>

@@ -11,35 +11,34 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
   return (
     <PageShell lenis={lenis}>
       <Helmet>
-        <title>Kelani — The Industrial Circular-Economy Platform</title>
+        <title>Kelani — Indigenous Technology & Industrial Productivity</title>
       </Helmet>
 
       <section className="px-clamp-inline pt-[56px] pb-[64px] md:pt-[80px] md:pb-[88px]">
         <FadeUpAnimation delay={0.1}>
-          <p className="space-grotesk-semibold text-[22px] md:text-[26px] bg-gradient-to-r from-[#440572e6] to-[#ff9a53] bg-clip-text text-transparent w-fit">
-            Kelani
-          </p>
+          <Eyebrow>Kelani</Eyebrow>
           <h1 className="display-heading mt-[16px] text-kelani-teal max-w-[1000px]">
-            We build, own, operate &amp; manage industrial companies.
+            Indigenous technology.{" "}
+            <span className="text-brand-gradient">African productivity.</span>
           </h1>
           <p className="museo-sans text-[16px] md:text-[18px] leading-[1.7] text-kelani-teal/70 mt-[26px] max-w-[620px]">
-            Kelani is West Africa's industrial circular-economy platform —
-            converting industrial and municipal waste streams into clean
-            energy, recovered materials, biochar and recovered chemicals,
-            through a repeatable model applied plant after plant.
+            For over twenty years Kelani has equipped Africa's producers —
+            selling the machines, designing the energy systems, and helping
+            people build the right businesses on top of great indigenous
+            production and technology.
           </p>
           <div className="flex flex-wrap items-center gap-[24px] mt-[36px]">
             <a
-              href="/model"
-              className="inline-block bg-kelani-teal text-white rounded-[2px] py-[15px] px-[32px] museo-sans font-semibold text-[13px] uppercase tracking-wider hover:opacity-90 transition-opacity"
+              href="/machinery"
+              className="btn-brand inline-block rounded-[2px] py-[15px] px-[32px] museo-sans font-semibold text-[13px] uppercase tracking-wider"
             >
-              Explore the model
+              Browse machinery
             </a>
             <a
-              href="mailto:support@kelani.ng?subject=Partnership%20—%20Kelani%20platform"
+              href="/model"
               className="museo-sans font-semibold text-[13px] uppercase tracking-wider text-kelani-teal underline underline-offset-[6px] hover:opacity-60 transition-opacity"
             >
-              Partner with us
+              Where we're headed
             </a>
           </div>
         </FadeUpAnimation>
@@ -54,35 +53,77 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
               className="w-full h-[380px] md:h-[560px] object-cover img-editorial"
             />
             <figcaption className="museo-sans text-[12px] text-kelani-teal/50 mt-[10px]">
-              Waste in, value out — a recycling line delivered under the Kelani model.
+              A recycling line sourced, installed and commissioned by Kelani.
             </figcaption>
           </figure>
         </FadeUpAnimation>
       </section>
 
       <section className="px-clamp-inline py-[72px] md:py-[96px] border-t border-[#e4e0d6]">
-        <div className="flex flex-wrap items-end justify-between gap-[24px]">
-          <SectionHeader
-            eyebrow="The model"
-            title="Three layers, one platform."
-            lead="Trade funds the pipeline. Engineering finds the plants. The plants build the owned industrial base — and the operating discipline that runs them becomes a product of its own."
-          />
-          <FadeUpAnimation delay={0.25}>
-            <a
-              href="/model"
-              className="museo-sans font-semibold text-[13px] uppercase tracking-wider text-kelani-teal underline underline-offset-[6px] hover:opacity-60 transition-opacity whitespace-nowrap"
-            >
-              How it works &rarr;
-            </a>
-          </FadeUpAnimation>
-        </div>
+        <SectionHeader
+          eyebrow="What we do today"
+          title="Machines, energy systems, and the businesses built on them."
+        />
         <div className="grid md:grid-cols-3 gap-[20px] mt-[44px]">
           <FadeUpAnimation delay={0.15}>
             <PillarBlock
               index={1}
               tone="white"
-              title="Trade & Procure"
-              description="Waste-to-value equipment, OEM partnerships and procurement — the cash engine and the pipeline."
+              title="We sell machinery"
+              description="Factory-direct industrial machinery for food, water, plastics and packaging — in stock, priced, installed and supported."
+              href="/machinery"
+              cta="Browse the catalogue"
+            />
+          </FadeUpAnimation>
+          <FadeUpAnimation delay={0.23}>
+            <PillarBlock
+              index={2}
+              tone="white"
+              title="We design energy systems"
+              description="Biochar, biogas, biofuels and waste-to-energy — integrated systems designed, built and installed around your feedstock."
+              href="/energy"
+              cta="Energy systems"
+            />
+          </FadeUpAnimation>
+          <FadeUpAnimation delay={0.31}>
+            <PillarBlock
+              index={3}
+              tone="white"
+              title="We help build businesses"
+              description="Feasibility, plant setup, training and operations support — so the right business gets built on the right production line."
+              href="/industry"
+              cta="How we help"
+            />
+          </FadeUpAnimation>
+        </div>
+        <FadeUpAnimation delay={0.3}>
+          <p className="museo-sans text-[14px] text-kelani-teal/60 mt-[28px]">
+            Working across{" "}
+            <a href="/industry/food-water" className="underline underline-offset-[4px] hover:opacity-70 text-kelani-teal">
+              food &amp; water production
+            </a>{" "}
+            and the{" "}
+            <a href="/industry/plastics" className="underline underline-offset-[4px] hover:opacity-70 text-kelani-teal">
+              plastics value chain
+            </a>
+            .
+          </p>
+        </FadeUpAnimation>
+      </section>
+
+      <section className="px-clamp-inline py-[72px] md:py-[96px] bg-kelani-cream">
+        <SectionHeader
+          eyebrow="Where we're headed"
+          title="Three engines of Kelani's future."
+          lead="Today's trade funds tomorrow's platform. We're building toward owning and operating the plants we equip — with energy and industrial finance growing alongside."
+        />
+        <div className="grid md:grid-cols-3 gap-[20px] mt-[44px]">
+          <FadeUpAnimation delay={0.15}>
+            <PillarBlock
+              index={1}
+              tone="mint"
+              title="The BOOT platform"
+              description="Build-Own-Operate-Transfer plants converting waste into energy, materials and biochar — a repeatable model, applied plant after plant."
               href="/model"
               cta="The model"
             />
@@ -91,64 +132,18 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
             <PillarBlock
               index={2}
               tone="white"
-              title="Engineer & Serve"
-              description="Audits, EPC delivery, commissioning and O&M — the annuity and the credibility."
-              href="/model"
-              cta="The model"
+              title="Energy ownership"
+              description="From designing energy systems for clients to owning and operating our own — starting with biochar in Eastern Nigeria."
+              href="/energy"
+              cta="Energy"
             />
           </FadeUpAnimation>
           <FadeUpAnimation delay={0.31}>
             <PillarBlock
               index={3}
-              tone="mint"
-              title="Build · Own · Operate"
-              description="Modular BOOT plants selling product, energy and carbon — the owned industrial base."
-              href="/model"
-              cta="The BOOT engine"
-            />
-          </FadeUpAnimation>
-        </div>
-      </section>
-
-      <section className="px-clamp-inline py-[72px] md:py-[96px] bg-kelani-cream">
-        <SectionHeader
-          eyebrow="Where we work"
-          title="Four lines of business, one commitment to Africa's industry."
-        />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[20px] mt-[44px]">
-          <FadeUpAnimation delay={0.15}>
-            <PillarBlock
-              index={1}
               tone="white"
-              title="Food & Water"
-              description="Machinery and expertise for water treatment, food processing, and packaging."
-              href="/industry/food-water"
-            />
-          </FadeUpAnimation>
-          <FadeUpAnimation delay={0.22}>
-            <PillarBlock
-              index={2}
-              tone="white"
-              title="Plastics"
-              description="Full value chain — pellet sourcing, machinery, recycling, and advisory."
-              href="/industry/plastics"
-            />
-          </FadeUpAnimation>
-          <FadeUpAnimation delay={0.29}>
-            <PillarBlock
-              index={3}
-              tone="white"
-              title="Energy"
-              description="Biochar, biogas, biofuels and waste-to-energy systems — designed, built, and operated."
-              href="/energy"
-            />
-          </FadeUpAnimation>
-          <FadeUpAnimation delay={0.36}>
-            <PillarBlock
-              index={4}
-              tone="white"
-              title="Finance"
-              description="Helping manufacturers recover excess shipping and bank fees — a new line we're building."
+              title="Industrial finance"
+              description="Helping manufacturers recover excess shipping and bank fees — the first step in a growing finance line."
               href="/industry/plastics#finance"
               cta="Learn more"
             />
@@ -181,18 +176,30 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
       <section className="bg-kelani-teal px-clamp-inline py-[72px] md:py-[88px]">
         <div className="grid md:grid-cols-[1fr_auto] gap-[32px] items-center">
           <FadeUpAnimation delay={0.1}>
-            <Eyebrow className="text-kelani-mint">Partner with Kelani</Eyebrow>
+            <Eyebrow className="text-kelani-mint">Work with Kelani</Eyebrow>
             <h2 className="space-grotesk-semibold text-[26px] md:text-[36px] leading-[1.1] tracking-[-0.01em] mt-[14px] max-w-[640px] text-white">
-              Waste streams, sites, or capital — bring one, we bring the rest.
+              Setting up a line, a plant, or a whole business?
             </h2>
+            <p className="museo-sans text-[15px] leading-[1.7] mt-[16px] max-w-[540px] text-white/70">
+              Start with the machine you need today — or the plant you want
+              to own tomorrow.
+            </p>
           </FadeUpAnimation>
           <FadeUpAnimation delay={0.25}>
-            <a
-              href="/model"
-              className="inline-block bg-kelani-mint text-kelani-teal rounded-[2px] py-[16px] px-[36px] museo-sans font-semibold text-[14px] uppercase tracking-wider hover:opacity-90 transition-opacity"
-            >
-              See the model
-            </a>
+            <div className="flex flex-col gap-[14px]">
+              <a
+                href="/machinery"
+                className="btn-brand inline-block text-center rounded-[2px] py-[16px] px-[36px] museo-sans font-semibold text-[14px] uppercase tracking-wider"
+              >
+                Browse machinery
+              </a>
+              <a
+                href="/model"
+                className="museo-sans text-center font-semibold text-[13px] uppercase tracking-wider text-kelani-mint underline underline-offset-[6px] hover:opacity-70 transition-opacity"
+              >
+                See the platform model
+              </a>
+            </div>
           </FadeUpAnimation>
         </div>
       </section>
