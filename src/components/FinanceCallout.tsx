@@ -28,7 +28,7 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
   });
 
   const onSubmit = (data: FormSchema) => {
-    const subject = `Finance recovery interest — ${data.company}`;
+    const subject = `LC & trade-fee recovery — ${data.company}`;
     const bodyLines = [
       `Name: ${data.name}`,
       `Company: ${data.company}`,
@@ -49,15 +49,17 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
         <div className="bg-kelani-cream text-kelani-teal h-full p-[32px] md:p-[56px] flex flex-col justify-center">
           <Eyebrow>Finance &mdash; coming soon</Eyebrow>
           <h3 className="display-heading mt-[16px] text-kelani-teal" style={{ fontSize: "clamp(1.75rem, 1.4rem + 1.4vw, 2.75rem)" }}>
-            Recovering fees you're already owed
+            Importing on letters of credit? You're probably overpaying.
           </h3>
           <p className="museo-sans text-[15px] leading-[1.7] mt-[20px] max-w-[440px] text-kelani-teal/75">
-            We're building a service to help manufacturers and industrial
-            clients recover excess shipping and bank fees that are too high
-            or can be contested &mdash; we work with you to recover the money
-            and only take a fee from what's recovered. If that's useful for
-            your {industry} business, tell us a bit about you and we'll be
-            in touch.
+            LC issuance, confirmation and amendment charges, discrepancy
+            fees, FX spreads, demurrage and shipping-line surcharges &mdash;
+            trade finance is full of costs that are miscalculated,
+            duplicated, or simply contestable. We're building a service that
+            audits your LCs and shipping files, contests the excess, and
+            recovers the money &mdash; our fee comes only out of what we
+            recover. If you run LCs for your {industry} business, tell us a
+            bit about you and we'll be in touch.
           </p>
         </div>
       </FadeUpAnimation>
@@ -116,7 +118,7 @@ const FinanceCallout = ({ industry }: { industry: string }) => {
               </div>
               <textarea
                 {...register("message")}
-                placeholder="Tell us a bit about the fees you're looking to recover (optional)"
+                placeholder="Tell us about your LC volumes, banks, or the charges you'd like reviewed (optional)"
                 rows={3}
                 className="bg-transparent border border-[#d8d4c8] focus:border-kelani-teal outline-none rounded-[2px] p-[12px] museo-sans text-[14px] placeholder:text-kelani-teal/40 resize-none"
               />
