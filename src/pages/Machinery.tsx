@@ -21,6 +21,43 @@ const quoteSchema = z.object({
 });
 type QuoteSchema = z.infer<typeof quoteSchema>;
 
+const MachineImage = ({ machine }: { machine: Machine }) =>
+  machine.image ? (
+    <img
+      src={machine.image}
+      alt={machine.name}
+      loading="lazy"
+      className="w-full h-full object-cover img-editorial"
+    />
+  ) : (
+    // Branded placeholder shown until a real photo is set on the machine.
+    <div className="w-full h-full bg-kelani-cream flex items-center justify-center relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.18] bg-brand-gradient"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 opacity-[0.4]"
+        style={{
+          backgroundImage:
+            "linear-gradient(var(--kelani-teal) 1px, transparent 1px), linear-gradient(90deg, var(--kelani-teal) 1px, transparent 1px)",
+          backgroundSize: "26px 26px",
+          maskImage: "radial-gradient(circle at center, black, transparent 72%)",
+          WebkitMaskImage:
+            "radial-gradient(circle at center, black, transparent 72%)",
+        }}
+        aria-hidden="true"
+      />
+      <LineIcon
+        name={machine.icon}
+        className="w-16 h-16 text-kelani-teal relative z-[1]"
+      />
+      <span className="absolute bottom-[12px] left-[16px] eyebrow-label text-[10px] text-kelani-teal/45 z-[1]">
+        Kelani
+      </span>
+    </div>
+  );
+
 const MachineCard = ({
   machine,
   onQuote,
@@ -28,45 +65,47 @@ const MachineCard = ({
   machine: Machine;
   onQuote: (m: Machine) => void;
 }) => (
-  <div className="bg-white border border-[#e4e0d6] rounded-[2px] p-[24px] md:p-[28px] flex flex-col h-full">
-    <div className="flex items-start justify-between gap-[12px]">
-      <LineIcon name={machine.icon} className="w-11 h-11 text-kelani-teal" />
+  <div className="bg-white border border-[#e4e0d6] rounded-[2px] flex flex-col h-full overflow-hidden">
+    <div className="relative aspect-[4/3] border-b border-[#e4e0d6]">
+      <MachineImage machine={machine} />
       <span
-        className={`eyebrow-label text-[10.5px] px-[10px] py-[5px] rounded-[2px] ${
+        className={`absolute top-[12px] right-[12px] eyebrow-label text-[10.5px] px-[10px] py-[5px] rounded-[2px] backdrop-blur-[2px] ${
           machine.condition === "New"
-            ? "bg-kelani-mint/15 text-kelani-teal"
-            : "bg-kelani-cream text-kelani-teal/70"
+            ? "bg-kelani-mint/90 text-kelani-teal"
+            : "bg-white/85 text-kelani-teal/70"
         }`}
       >
         {machine.condition}
       </span>
     </div>
-    <p className="eyebrow-label text-kelani-teal/50 mt-[20px]">{machine.category}</p>
-    <h3 className="space-grotesk-semibold text-[18px] leading-[1.25] text-kelani-teal mt-[8px]">
-      {machine.name}
-    </h3>
-    <ul className="mt-[14px] flex flex-col gap-[6px] flex-grow">
-      {machine.specs.map((spec) => (
-        <li
-          key={spec}
-          className="museo-sans text-[13px] leading-[1.5] text-kelani-teal/65 flex gap-[8px]"
+    <div className="p-[24px] md:p-[28px] flex flex-col flex-grow">
+      <p className="eyebrow-label text-kelani-teal/50">{machine.category}</p>
+      <h3 className="space-grotesk-semibold text-[18px] leading-[1.25] text-kelani-teal mt-[8px]">
+        {machine.name}
+      </h3>
+      <ul className="mt-[14px] flex flex-col gap-[6px] flex-grow">
+        {machine.specs.map((spec) => (
+          <li
+            key={spec}
+            className="museo-sans text-[13px] leading-[1.5] text-kelani-teal/65 flex gap-[8px]"
+          >
+            <span className="text-kelani-mint mt-[1px]">&mdash;</span>
+            {spec}
+          </li>
+        ))}
+      </ul>
+      <div className="border-t border-[#e4e0d6] mt-[20px] pt-[16px] flex items-center justify-between gap-[12px]">
+        <p className="space-grotesk-semibold text-[16px] text-brand-gradient">
+          {machine.price}
+        </p>
+        <button
+          type="button"
+          onClick={() => onQuote(machine)}
+          className="museo-sans text-[12px] font-semibold uppercase tracking-wider text-kelani-teal underline underline-offset-[5px] hover:opacity-60 transition-opacity"
         >
-          <span className="text-kelani-mint mt-[1px]">&mdash;</span>
-          {spec}
-        </li>
-      ))}
-    </ul>
-    <div className="border-t border-[#e4e0d6] mt-[20px] pt-[16px] flex items-center justify-between gap-[12px]">
-      <p className="space-grotesk-semibold text-[16px] text-brand-gradient">
-        {machine.price}
-      </p>
-      <button
-        type="button"
-        onClick={() => onQuote(machine)}
-        className="museo-sans text-[12px] font-semibold uppercase tracking-wider text-kelani-teal underline underline-offset-[5px] hover:opacity-60 transition-opacity"
-      >
-        Request quote
-      </button>
+          Request quote
+        </button>
+      </div>
     </div>
   </div>
 );

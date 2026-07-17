@@ -2,6 +2,11 @@ import { LineIconName } from "../components/LineIcon";
 
 // NOTE: placeholder catalog — replace names, specs and prices with the real
 // inventory list before launch. Prices are indicative, ex-works.
+//
+// To add a real photo of a machine, drop the file in
+// public/assets/images/machinery/ and set `image` to its path, e.g.
+//   image: "/assets/images/machinery/single-screw-extruder.jpg"
+// Until then, cards fall back to a branded placeholder built from the icon.
 export interface Machine {
   id: string;
   name: string;
@@ -10,6 +15,7 @@ export interface Machine {
   specs: string[];
   price: string;
   condition: "New" | "Refurbished";
+  image?: string;
 }
 
 export const machines: Machine[] = [
@@ -39,6 +45,7 @@ export const machines: Machine[] = [
     specs: ["500 kg/hr hot-wash", "Label remover + friction washers", "Food-grade flake output"],
     price: "₦85,000,000",
     condition: "New",
+    image: "/assets/images/balebreaker-PET-recycling.jpg",
   },
   {
     id: "pelletizing-line",
@@ -48,6 +55,7 @@ export const machines: Machine[] = [
     specs: ["300 kg/hr twin-stage", "Water-ring cutter", "PE / PP / PET compatible"],
     price: "₦39,000,000",
     condition: "Refurbished",
+    image: "/assets/images/energy1.jpg",
   },
   {
     id: "ro-plant-10000",
