@@ -143,7 +143,7 @@ const Home = ({ lenis }: { lenis: Lenis }) => {
               index={3}
               tone="white"
               title="Industrial finance"
-              description="Helping manufacturers recover excess shipping and bank fees — the first step in a growing finance line."
+              description="Recovering excess LC, bank and shipping charges for importers — you keep the upside, we earn only from what we recover."
               href="/industry/plastics#finance"
               cta="Learn more"
             />
